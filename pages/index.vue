@@ -1,25 +1,6 @@
 <template>
   <div class="container">
-    <article class="card">
-      <nuxt-link
-        :to="item.id"
-        v-for="item in items"
-        :key="item.id"
-        class="card__item"
-      >
-        <div
-          class="card__item-thumbnail"
-          :style="{ 'background-image': 'url(' + item.thumbnail.url + ')' }"
-        ></div>
-        <div class="card__item-text">
-          <p class="title">{{ item.title }}</p>
-        </div>
-        <div class="box">
-          <p class="category">{{ item.category.name }}</p>
-          <p class="tag">{{ item.tag.name }}</p>
-        </div>
-      </nuxt-link>
-    </article>
+    <Card :items="items" />
   </div>
 </template>
 
@@ -36,9 +17,11 @@ export default {
   },
   async asyncData() {
     const { data } = await axios.get(
-      'https://nuxtblog.microcms.io/api/v1/media' /*  コンテンツURLを記述    */,
+      "https://nuxtblog.microcms.io/api/v1/media" /*  コンテンツURLを記述    */,
       {
-        headers: { 'X-API-KEY' : process.env.API_KEY } /*  持ってきたいデータのAPI_KEYを記述    */,
+        headers: {
+          "X-API-KEY": process.env.API_KEY,
+        } /*  持ってきたいデータのAPI_KEYを記述    */,
       }
     );
     return {
@@ -49,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-$sp:768px;
+$sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
@@ -77,7 +60,7 @@ $sp:768px;
   &::before {
     content: "";
     width: 340px;
-    order:1;
+    order: 1;
   }
   &::after {
     content: "";
@@ -89,16 +72,16 @@ $sp:768px;
     min-height: 350px;
     margin-bottom: 20px;
     background-color: #fff;
-    border:3px rgb(134, 134, 134) solid;
+    border: 3px rgb(134, 134, 134) solid;
     transition: 0.3s;
     position: relative;
-      @include sp {
+    @include sp {
       width: 90%;
       margin: 20px auto;
-      border:2px #26A69A solid;
-      }
+      border: 2px #26a69a solid;
+    }
     &:hover {
-      border:3px #26A69A solid;
+      border: 3px #26a69a solid;
       transition: 0.3s;
     }
     &-thumbnail {
@@ -125,40 +108,40 @@ $sp:768px;
     img {
       width: 200px;
     }
-      .box {
-        display: flex;
-        position: absolute;
-        bottom: 20px;
-        right: 10px;
-        @include sp {
-          bottom:10px;
-        }
+    .box {
+      display: flex;
+      position: absolute;
+      bottom: 20px;
+      right: 10px;
+      @include sp {
+        bottom: 10px;
       }
-      .category {
-        width: fit-content;
-        font-size: 1.6rem;
-        margin-top: 20px;
-        padding: 5px 10px;
-        background-color: #333;
-        color: #fff;
-        @include sp {
-          font-size: 1.3rem;
-          padding: 9px 10px;
-        }
+    }
+    .category {
+      width: fit-content;
+      font-size: 1.6rem;
+      margin-top: 20px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      @include sp {
+        font-size: 1.3rem;
+        padding: 9px 10px;
       }
-      .tag {
-        width: fit-content;
-        font-size: 1.6rem;
-        margin-top: 20px;
-        margin-left: 10px;
-        padding: 5px 10px;
-        background-color: #333;
-        color: #fff;
-        @include sp {
-          font-size: 1.3rem;
-          padding: 9px 10px;
-        }
+    }
+    .tag {
+      width: fit-content;
+      font-size: 1.6rem;
+      margin-top: 20px;
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      @include sp {
+        font-size: 1.3rem;
+        padding: 9px 10px;
       }
+    }
   }
 }
 </style>

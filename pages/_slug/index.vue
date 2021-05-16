@@ -4,6 +4,7 @@
     <p class="entry__breadcrumb"><nuxt-link to="/">トップ</nuxt-link> ― {{ title }}</p>
     <h2 class="entry__title">{{ title }}</h2>
     <div class="entry__content" v-html="content"></div>
+    <Share />
   </article>
   </div>
 </template>
