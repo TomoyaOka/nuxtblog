@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <div class="flex unit">
+    <div class="flex unit mb100">
     <Nuxt />
     <Sidebar />
     </div>

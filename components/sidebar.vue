@@ -1,6 +1,8 @@
 <template>
 <div class="sidebar">
   <div class="sidebar__icon"></div>
+  <div class="sidebar__icon"></div>
+  <div class="sidebar__icon"></div>
 </div>
 </template>
 
@@ -13,7 +15,6 @@ $sp:768px;
 }
 .sidebar {
   width: 30%;
-  height: 600px;
   margin-top: 50px;
   padding: 0 10px;
   border: 1px solid;
@@ -22,9 +23,9 @@ $sp:768px;
     margin: 50px auto;
   }
   &__icon {
-    width: 200px;
-    height: 120px;
-    margin: 0 auto;
+    width: 100%;
+    height: 250px;
+    margin: 10px auto;
     background-color: darkseagreen;
   }
 }
