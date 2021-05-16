@@ -22,8 +22,10 @@ $sp:768px;
   }
 }
 .footer {
-  background-color: #fff;
-  border-top:1px #333 solid;
+  background-image: url(@/assets/img/bg_plus.png);
+  background-repeat: repeat;
+  background-position: center;
+  padding-top: 20px;
   &__sns {
     display: flex;
     justify-content: center;

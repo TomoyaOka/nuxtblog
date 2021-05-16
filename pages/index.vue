@@ -1,5 +1,5 @@
 <template>
-  <div class="container unit">
+  <div class="container">
     <article class="card">
       <nuxt-link
         :to="item.id"
@@ -59,7 +59,11 @@ $sp:768px;
 }
 
 .container {
+  width: 70%;
   padding: 0 15px;
+  @include sp {
+    width: 100%;
+  }
 }
 
 .card {
@@ -79,16 +83,15 @@ $sp:768px;
   }
   &::after {
     content: "";
-    width: 340px;
+    width: 390px;
   }
   &__item {
     display: block;
-    width: 340px;
+    width: 390px;
     min-height: 350px;
     margin-bottom: 20px;
     background-color: #fff;
-    border-radius: 10px;
-    border:3px #333 solid;
+    border:3px rgb(134, 134, 134) solid;
     transition: 0.3s;
     position: relative;
       @include sp {
@@ -105,7 +108,6 @@ $sp:768px;
       background-repeat: no-repeat;
       background-position: center;
       height: 230px;
-      border-radius: 10px 10px 0 0;
       border-bottom: 1px rgb(212, 212, 212) solid;
       @include sp {
         background-size: 300px;

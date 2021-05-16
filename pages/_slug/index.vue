@@ -1,7 +1,7 @@
 <template>
   <div class="container unit">
   <article class="entry">
-    <p class="entry__breadcrumb"><nuxt-link to="/">トップ ― </nuxt-link>{{ title }}</p>
+    <p class="entry__breadcrumb"><nuxt-link to="/">トップ</nuxt-link> ― {{ title }}</p>
     <h2 class="entry__title">{{ title }}</h2>
     <div class="entry__content" v-html="content"></div>
   </article>
@@ -38,11 +38,16 @@ $sp:768px;
     font-size: 1.4rem;
     margin-bottom: 50px;
     @include sp {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      margin-bottom: 30px;
     }
   }
   .nuxt-link-active {
     margin-right: 5px;
+    border-bottom: 1px solid;
+    &:hover {
+      color: #26A69A;
+    }
   }
   &__title {
     font-size: 2.5rem;
@@ -80,6 +85,7 @@ $sp:768px;
     }
     p {
       font-size: 1.6rem;
+      line-height: 1.6;
       margin: 10px 0;
       @include sp {
       font-size: 1.4rem;
