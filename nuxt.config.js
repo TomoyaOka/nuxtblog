@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { API_KEY } = process.env;
+
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -60,6 +61,5 @@ export default {
   env: {
     API_KEY
   },
-
   
 }

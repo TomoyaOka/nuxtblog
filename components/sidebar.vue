@@ -32,7 +32,7 @@ $sp: 768px;
   margin-top: 50px;
   padding: 0 10px;
   @include sp {
-    width: 70%;
+    width: 100%;
     margin: 50px auto;
   }
   &__banner {

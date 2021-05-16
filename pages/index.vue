@@ -39,7 +39,7 @@ export default {
       "https://nuxtblog.microcms.io/api/v1/media" /*  コンテンツURLを記述    */,
       {
         headers: {
-          "X-API-kEY": "4ede2e2b-eb03-4493-88e6-4c81621c4858",
+          "X-API-KEY": "4ede2e2b-eb03-4493-88e6-4c81621c4858",
         } /*  持ってきたいデータのAPI_KEYを記述    */,
       }
     );
@@ -47,6 +47,9 @@ export default {
       items: data.contents,
     };
   },
+  mounted() {
+    console.log(process.env.API_KEY);
+  }
 };
 </script>
 
