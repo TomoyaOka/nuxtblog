@@ -24,7 +24,6 @@ $sp:768px;
     padding: 28px;
   }
   &__title {
-    width: fit-content;
     font-size: 4rem;
     text-align: center;
     color:#333;

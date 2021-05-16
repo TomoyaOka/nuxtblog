@@ -39,6 +39,7 @@ $sp:768px;
     margin-bottom: 50px;
     @include sp {
       font-size: 1rem;
+      line-height: 1.6;
       margin-bottom: 30px;
     }
   }
