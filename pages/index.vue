@@ -36,11 +36,9 @@ export default {
   },
   async asyncData() {
     const { data } = await axios.get(
-      "https://nuxtblog.microcms.io/api/v1/media" /*  コンテンツURLを記述    */,
+      'https://nuxtblog.microcms.io/api/v1/media' /*  コンテンツURLを記述    */,
       {
-        headers: {
-          "X-API-KEY": "4ede2e2b-eb03-4493-88e6-4c81621c4858",
-        } /*  持ってきたいデータのAPI_KEYを記述    */,
+        headers: { 'X-API-KEY' : process.env.API_KEY } /*  持ってきたいデータのAPI_KEYを記述    */,
       }
     );
     return {

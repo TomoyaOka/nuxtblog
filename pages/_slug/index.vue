@@ -16,7 +16,7 @@ export default {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media/${params.slug}`,
       {
-        headers: { 'X-API-KEY': '4ede2e2b-eb03-4493-88e6-4c81621c4858' }
+        headers: { 'X-API-KEY': process.env.API_KEY }
       }
     )
     return data
