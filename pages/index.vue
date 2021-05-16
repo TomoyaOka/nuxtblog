@@ -45,9 +45,6 @@ export default {
       items: data.contents,
     };
   },
-  mounted() {
-    console.log(process.env.API_KEY);
-  }
 };
 </script>
 
