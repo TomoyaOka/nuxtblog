@@ -15,6 +15,18 @@ body {
   color:#333;
   font-family: "游ゴシック", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
+
+::selection {
+  background: #26A69A;
+  color: #fff;
+}
+
+//Firefox
+::-moz-selection {
+  background: #26A69A;
+  color: #fff;
+}
+
 .unit {
   max-width: 1300px!important;
   margin: 0 auto;

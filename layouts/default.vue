@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrap">
     <Header />
     <div class="flex unit mb100">
     <Nuxt />

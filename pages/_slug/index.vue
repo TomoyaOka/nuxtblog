@@ -1,97 +1,33 @@
 <template>
   <div class="container unit">
-  <article class="entry">
-    <p class="entry__breadcrumb"><nuxt-link to="/">トップ</nuxt-link> ― {{ title }}</p>
-    <h2 class="entry__title">{{ title }}</h2>
-    <div class="entry__content" v-html="content"></div>
-   <ul class="sns">
-      <li>
-        <a :href="twitterURL" target="_blank" rel="nofollow">
-          <img
-            alt="twitter"
-            src="~assets/images/twitter.png"
-            :width="size"
-            :height="size"
-          />
-        </a>
-      </li>
-      <li>
-        <a :href="facebookURL" target="_blank" rel="nofollow">
-          <img
-            alt="facebook"
-            src="~assets/images/twitter.png"
-            :width="size"
-            :height="size"
-          />
-        </a>
-      </li>
-      <li>
-        <a :href="lineURL" target="_blank" rel="nofollow">
-          <img
-            alt="line"
-            src="~assets/images/twitter.png"
-            :width="size"
-            :height="size"
-          />
-        </a>
-      </li>
-    </ul>
-  </article>
+    <article class="entry">
+      <p class="entry__breadcrumb">
+        <nuxt-link to="/">トップ</nuxt-link> ― {{ title }}
+      </p>
+      <h2 class="entry__title">{{ title }}</h2>
+      <div class="entry__content" v-html="content"></div>
+    </article>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media/${params.slug}`,
       {
-        headers: { 'X-API-KEY': process.env.API_KEY }
+        headers: { "X-API-KEY": process.env.API_KEY },
       }
-    )
-    return data
+    );
+    return data;
   },
-    props: {
-    title: {
-      type: String,
-      default: '',
-      required: true
-    }
-  },
-  computed: {
-    size() {
-      return 36
-    },
-    url() {
-      return `https://nuxt-challenge.netlify.app/${this.$route.path}`
-    },
-    fixedTitle() {
-      return encodeURIComponent(this.title)
-    },
-    fixedContent() {
-      return encodeURIComponent(`${this.title} ${this.url}`)
-    },
-    twitterURL() {
-      return `https://twitter.com/intent/tweet?url=${this.url}&text=${
-        this.fixedTitle
-      }`
-    },
-    facebookURL() {
-      return `https://www.facebook.com/sharer/sharer.php?u=${this.url}&t=${
-        this.fixedTitle
-      }`
-    },
-    lineURL() {
-      return `http://line.me/R/msg/text/?${this.fixedContent}`
-    }
-  }
-}
+};
 </script>
 
 <style lang="scss">
-$sp:768px;
+$sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
@@ -111,9 +47,12 @@ $sp:768px;
   }
   .nuxt-link-active {
     margin-right: 5px;
-    border-bottom: 1px solid;
+    color: #26a69a;
+    border-bottom: 1px #26a69a solid;
+    transition: 0.2s;
     &:hover {
-      color: #26A69A;
+      opacity: 0.5;
+      transition: 0.2s;
     }
   }
   &__title {
@@ -125,45 +64,66 @@ $sp:768px;
     }
   }
   &__content {
-
     h2 {
       font-size: 2.2rem;
       font-weight: bold;
-      color: #26A69A;
+      color: #26a69a;
       border-bottom: 3px solid;
       margin: 15px 0;
       padding: 10px 0;
-    @include sp {
-      font-size: 1.8rem;
-      padding: 5px 0;
-    }
+      @include sp {
+        font-size: 1.8rem;
+        padding: 5px 0;
+      }
     }
     h3 {
-      font-size:1.8rem;
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #26A69A;
+      color: #26a69a;
       border-left: 3px solid;
       margin: 15px 0;
       padding: 0 10px;
-    @include sp {
-      font-size: 1.6rem;
-      padding: 0 5px;
-    }
+      @include sp {
+        font-size: 1.6rem;
+        padding: 0 5px;
+      }
     }
     p {
       font-size: 1.6rem;
       line-height: 1.6;
       margin: 10px 0;
       @include sp {
-      font-size: 1.4rem;
-    }
+        font-size: 1.4rem;
+      }
     }
     img {
       max-width: 100%;
       margin: 15px auto;
       text-align: center;
     }
+
+    pre {
+      background-color: rgb(22, 22, 22);
+      margin: 10px auto;
+      padding: 10px;
+      overflow: auto;
+      code {
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+
+    a {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #26a69a;
+      border-bottom: 1px solid;
+      transition: 0.2s;
+      &:hover {
+        opacity: 0.5;
+        transition: 0.2s;
+      }
+    }
   }
 }
-
 </style>

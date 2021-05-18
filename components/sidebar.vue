@@ -15,7 +15,7 @@
     <div class="sidebar__about">
       <p class="about">投稿者情報</p>
       <div class="img"></div>
-      <p class="text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      <p class="text">中小規模のお仕事をさせていただいております。デザイン~コーディングまで幅広く活動しております。普段はWordPressでの実装が殆どですが、現在Vue.Nuxtについても学習を進めています。</p>
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ $sp: 768px;
     margin: 50px auto;
   }
   &__banner {
-    width: 100%;
+    width: 90%;
     margin: 10px auto;
     transition: 0.2s;
     position: relative;
@@ -66,12 +66,16 @@ $sp: 768px;
     .img {
       width: 150px;
       height: 150px;
-      background-color: darkslategray;
+      background-image: url(@/assets/img/about.png);
+      background-position: center;
+      background-size: 150px;
+      background-repeat: no-repeat;
       margin: 20px auto;
     }
 
     .text {
       font-size: 1.6rem;
+      padding: 0 25px;
       @include sp {
         font-size: 1.4rem;
       }

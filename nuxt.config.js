@@ -8,14 +8,22 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'CHALLENGE',
+    title: 'Next!!',
+ 
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'HTML.CSS.Nuxt.Vueなど技術面についての記事や筆者の考え方について投稿していくブログです。' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Next!!' },
+      { hid: 'og:type', property: 'og:type', content: 'article' },
+      { hid: 'og:url', property: 'og:url', content: 'https://nuxt-challenge.netlify.app/' },
+      { hid: 'og:title', property: 'og:title', content: 'Next!!' },
+      { hid: 'og:description', property: 'og:description', content: 'HTML.CSS.Nuxt.Vueなど技術面についての記事や筆者の考え方について投稿していくブログです。' },
+      { hid: 'og:image', property: 'og:image', content: 'アイキャッチのURL' },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -48,7 +56,6 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
-    '@nuxtjs/vuetify',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -61,5 +68,37 @@ export default {
   env: {
     API_KEY
   },
-  
+  performance: { hints: false },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/page/:p',
+        component: resolve(__dirname, 'pages/index.vue'),
+        name: 'page',
+      })
+    },
+  },
+
+  // generate: {
+  //   async routes() {
+  //     const limit = 3
+  //     const range = (start, end) =>
+  //       [...Array(end - start + 1)].map((_, i) => start + i)
+
+  //     // 一覧のページング
+  //     const data = await axios
+  //       .get(`https://nuxtblog.microcms.io/api/v1/media?limit=0`, {
+  //         headers: { 'X-API-KEY': process.env.API_KEY },
+  //       })
+  //       .then((res) =>
+  //         range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
+  //           route: `/page/${p}`,
+  //         }))
+  //       )
+  //       return {
+  //         items: data.contents,
+  //       };
+  //   },
+  // },
 }

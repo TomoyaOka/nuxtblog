@@ -5,7 +5,7 @@
         <p class="sns"><a href="https://twitter.com/Create_toom"><img src="@/assets/img/twitter.png"></a></p>
         <p class="sns"><a href="#"><img src="@/assets/img/inst.png"></a></p>
       </div>
-      <p class="footer__copy">©copyright 2021.5.30 CHALLENGE</p>
+      <p class="footer__copy">©copyright 2021.5.30 Next!!</p>
     </footer>
   </div>
 </template>
