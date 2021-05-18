@@ -15,6 +15,7 @@ import axios from "axios";
   },
   head: {
     script: [],
+    
   },
   async asyncData() {
     const { data } = await axios.get(
@@ -24,6 +25,11 @@ import axios from "axios";
     return {
       items: data.contents,
     };
+  },
+   head() {
+    return {
+      title: '技術系 - Next!!'
+    }
   }
 };
 </script>

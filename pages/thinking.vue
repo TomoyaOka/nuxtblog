@@ -24,6 +24,11 @@ import axios from "axios";
     return {
       items: data.contents,
     };
+  },
+  head() {
+    return {
+      title: '考え方 - Next!!'
+    }
   }
 };
 </script>

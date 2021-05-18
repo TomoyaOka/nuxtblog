@@ -1,26 +1,18 @@
 <template>
   <div class="container">
     <div class="front">
-      <div class="front__content border">
-        <nuxt-link to="/technology"
+        <nuxt-link class="front__content border" to="/technology"
           ><img src="@/assets/img/technology.png"
         /></nuxt-link>
-      </div>
-      <div class="front__content border">
-        <nuxt-link to="/thinking"
+        <nuxt-link class="front__content border" to="/thinking"
           ><img src="@/assets/img/thinking.png"
         /></nuxt-link>
-      </div>
-      <div class="front__content border">
-        <nuxt-link to="/gadget"
+        <nuxt-link class="front__content border" to="/gadget"
           ><img src="@/assets/img/gadget.png"
         /></nuxt-link>
-      </div>
-      <div class="front__content border">
-        <nuxt-link to="/application"
+        <nuxt-link class="front__content border" to="/application"
           ><img src="@/assets/img/application.png"
         /></nuxt-link>
-      </div>
     </div>
     <h2 class="card-title">最新投稿</h2>
     <Card :items="items" />
@@ -75,14 +67,41 @@ $sp: 768px;
     margin: 20px auto;
   }
   &__content {
+    display: block;
     width: 400px;
     margin: 20px auto;
+    position: relative;
+    @include sp {
+      margin: 10px auto;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #166d5a;
+      opacity: 0;
+      transition: 0.2s;
+    }
+      &:hover::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #166d5a;
+      opacity: 0.5;
+      transition: 0.2s;
+    }
     img {
       width: 100%;
     }
   }
   .border {
-    border: 1px rgb(200, 200, 200) solid;
+    box-shadow: 2px 2px 5px rgba(51,51,51,.1);
   }
 }
 

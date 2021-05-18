@@ -40,6 +40,17 @@ $sp: 768px;
     margin: 10px auto;
     transition: 0.2s;
     position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #166d5a;
+      opacity: 0;
+      transition: 0.2s;
+    }
     &:hover::before {
       content: "";
       position: absolute;

@@ -1,6 +1,11 @@
 <template>
   <div class="header-wrap">
     <header class="header">
+<!--  -->
+
+
+
+<!--  -->
       <h1 class="header__title"><nuxt-link to="/">Next!!</nuxt-link></h1>
       <nav class="nav">
         <!-- PC -->
@@ -39,7 +44,7 @@
             >
           </li>
           <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/gadge" v-on:click.native="flag = false"
+            <nuxt-link to="/gadget" v-on:click.native="flag = false"
               >ガジェット</nuxt-link
             >
           </li>
@@ -66,6 +71,16 @@ export default {
       flag: false,
     };
   },
+   data () {
+    return {
+      modes: {
+        type: Array,
+        default () {
+          return ['light', 'dark', 'system']
+        }
+      }
+    }
+  },
 };
 </script>
 
@@ -76,6 +91,9 @@ $sp: 768px;
     @content;
   }
 }
+
+
+
 .header-wrap {
   @include sp {
     height: 70px;
@@ -122,6 +140,13 @@ $sp: 768px;
     &-li {
       font-size: 2rem;
       font-weight: bold;
+      a {
+        transition: .2s;
+        &:hover {
+          transition: .2s;
+          color: #26a69a;
+        }
+      }
     }
   }
 }
@@ -195,7 +220,8 @@ $sp: 768px;
     &-text {
       font-size: 1.8rem;
       padding: 25px;
-      background-color: rgb(235, 235, 235);
+      background-image: url(@/assets/img/bg_plus.png);
+      background-position: center;
       font-weight: bold;
     }
     &-ul {
@@ -233,4 +259,6 @@ $sp: 768px;
   transform        : rotate(35deg);
 }
 /*  /バーガーメニュー  */
+
+
 </style>

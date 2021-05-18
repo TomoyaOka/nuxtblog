@@ -36,6 +36,9 @@ $sp: 768px;
 .entry {
   margin: 30px 0 100px 0;
   padding: 0 20px;
+  @include sp {
+    padding: 0 15px;
+  }
   &__breadcrumb {
     font-size: 1.4rem;
     margin-bottom: 50px;
@@ -60,7 +63,7 @@ $sp: 768px;
     font-weight: bold;
     margin-bottom: 50px;
     @include sp {
-      font-size: 1.6rem;
+      font-size: 2rem;
       margin-bottom: 10px;
     }
   }
