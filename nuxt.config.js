@@ -59,7 +59,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -79,26 +81,9 @@ export default {
       })
     },
   },
-
-  // generate: {
-  //   async routes() {
-  //     const limit = 3
-  //     const range = (start, end) =>
-  //       [...Array(end - start + 1)].map((_, i) => start + i)
-
-  //     // 一覧のページング
-  //     const data = await axios
-  //       .get(`https://nuxtblog.microcms.io/api/v1/media?limit=0`, {
-  //         headers: { 'X-API-KEY': process.env.API_KEY },
-  //       })
-  //       .then((res) =>
-  //         range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
-  //           route: `/page/${p}`,
-  //         }))
-  //       )
-  //       return {
-  //         items: data.contents,
-  //       };
-  //   },
-  // },
+// ローディングバー設定
+loading: {
+    color: 'mediumseagreen',
+    height: '2px'
+  },
 }
