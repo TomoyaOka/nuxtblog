@@ -12,7 +12,10 @@
             <nuxt-link to="/thinking">考え方</nuxt-link>
           </li>
           <li class="nav__ul-li">
-            <nuxt-link to="/freelance">フリーランス</nuxt-link>
+            <nuxt-link to="/gadget">ガジェット</nuxt-link>
+          </li>
+          <li class="nav__ul-li">
+            <nuxt-link to="/application">アプリ</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -36,13 +39,21 @@
             >
           </li>
           <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/freelance" v-on:click.native="flag = false"
-              >フリーランス</nuxt-link
+            <nuxt-link to="/gadge" v-on:click.native="flag = false"
+              >ガジェット</nuxt-link
+            >
+          </li>
+            <li class="sp-ul__li" :class="{ fadein: flag }">
+            <nuxt-link to="/application" v-on:click.native="flag = false"
+              >アプリ</nuxt-link
             >
           </li>
         </ul>
 
         <p class="sp-text">その他リンク</p>
+        <a href="https://toom-design.jp/" class="link">ポートフォリオサイト</a>
+        <a href="https://twitter.com/Create_toom" class="link mb10 mt10">Twitter:@Create_toom</a>
+        <a href="https://note.com/toom_design" class="link">note:toom-design</a>
       </nav>
     </header>
   </div>
@@ -104,7 +115,7 @@ $sp: 768px;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    width: 300px;
+    width: 500px;
     @include sp {
       display: none;
     }
@@ -197,6 +208,13 @@ $sp: 768px;
         }
       }
     }
+  }
+  .link {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 800;
+    padding: 25px 20px;
   }
 }
 

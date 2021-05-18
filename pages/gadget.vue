@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="card-title mt50">技術</h2>
+    <h2 class="card-title mt50">ガジェット</h2>
     <Card :items="items" />
   </div>
 </template>
@@ -18,7 +18,7 @@ import axios from "axios";
   },
   async asyncData() {
     const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]technology`,
+      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]gadget`,
       { headers: { 'X-API-KEY': process.env.API_KEY } }
     )
     return {
@@ -69,13 +69,13 @@ $sp: 768px;
     min-height: 350px;
     margin-bottom: 20px;
     background-color: #fff;
-    border: 1px rgb(212, 212, 212) solid;
+    border: 1px rgba(42, 173, 81,0.2) solid;
     transition: 0.3s;
     position: relative;
     @include sp {
       width: 90%;
       margin: 20px auto;
-      border: 1px #26a69a solid;
+      border: 1px rgba(42, 173, 81,0.2) solid;
     }
     &:hover {
       border: 1px #26a69a solid;

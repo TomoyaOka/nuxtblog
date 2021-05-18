@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="card-title mt50">アプリケーション</h2>
     <Card :items="items" />
   </div>
 </template>
@@ -17,7 +18,7 @@ import axios from "axios";
   },
   async asyncData() {
     const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]freelance`,
+      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]application`,
       { headers: { 'X-API-KEY': process.env.API_KEY } }
     )
     return {

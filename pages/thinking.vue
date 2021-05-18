@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <h2 class="card-title mt50">考え方</h2>
     <Card :items="items" />
   </div>
 </template>

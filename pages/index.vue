@@ -12,13 +12,13 @@
         /></nuxt-link>
       </div>
       <div class="front__content border">
-        <nuxt-link to="/freelance"
-          ><img src="@/assets/img/technology.png"
+        <nuxt-link to="/gadget"
+          ><img src="@/assets/img/gadget.png"
         /></nuxt-link>
       </div>
       <div class="front__content border">
-        <nuxt-link to="/freelance"
-          ><img src="@/assets/img/technology.png"
+        <nuxt-link to="/application"
+          ><img src="@/assets/img/application.png"
         /></nuxt-link>
       </div>
     </div>

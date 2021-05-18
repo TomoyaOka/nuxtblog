@@ -57,7 +57,8 @@ $sp: 768px;
   }
   &__title {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 50px;
     @include sp {
       font-size: 1.6rem;
       margin-bottom: 10px;
