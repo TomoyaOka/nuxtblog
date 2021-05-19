@@ -25,7 +25,7 @@ $sp:768px;
   background-image: url(@/assets/img/bg_plus.png);
   background-repeat: repeat;
   background-position: center;
-  padding-top: 20px;
+  padding: 20px 0;
   &__sns {
     display: flex;
     justify-content: center;

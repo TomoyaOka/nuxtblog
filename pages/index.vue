@@ -14,7 +14,7 @@
           ><img src="@/assets/img/application.png"
         /></nuxt-link>
     </div>
-    <h2 class="card-title">最新投稿</h2>
+    <h2 class="card-title">最新記事</h2>
     <Card :items="items" />
   </div>
 </template>
