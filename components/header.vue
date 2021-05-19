@@ -96,6 +96,9 @@ $sp: 768px;
   img {
     filter: grayscale(50%);
   }
+  span {
+    color:rgb(228, 228, 228)!important;
+  }
   }
   .card__item {
     background-color: rgb(238, 238, 238);
