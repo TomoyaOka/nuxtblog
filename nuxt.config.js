@@ -9,7 +9,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Next!!',
- 
+    
     htmlAttrs: {
       lang: 'ja'
     },
@@ -58,7 +58,25 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/google-gtag',
+    ['@nuxtjs/google-analytics', {
+      id: 'G-5V3VF5LL3P'
+    }],
   ],
+
+  'google-gtag': {
+    id: 'G-5V3VF5LL3P',
+    debug: true, 
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    // host名を設定
+    hostname: 'https://next-blog.site/',
+    generate: true,
+    exclude: [],
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

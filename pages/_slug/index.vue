@@ -23,6 +23,10 @@ export default {
     );
     return data;
   },
+  mounted() {
+    Prism.highlightAll()
+  },
+  
 };
 </script>
 
