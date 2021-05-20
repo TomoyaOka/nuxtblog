@@ -9,10 +9,10 @@
             <nuxt-link to="/technology">技術系</nuxt-link>
           </li>
           <li class="nav__ul-li">
-            <nuxt-link to="/thinking">考え方</nuxt-link>
+            <nuxt-link to="/design">デザイン</nuxt-link>
           </li>
           <li class="nav__ul-li">
-            <nuxt-link to="/gadget">ガジェット</nuxt-link>
+            <nuxt-link to="/thinking">考え方</nuxt-link>
           </li>
           <li class="nav__ul-li">
             <nuxt-link to="/application">アプリ</nuxt-link>
@@ -42,13 +42,13 @@
             >
           </li>
           <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/thinking" v-on:click.native="flag = false"
-              >考え方</nuxt-link
+            <nuxt-link to="/design" v-on:click.native="flag = false"
+              >デザイン</nuxt-link
             >
           </li>
           <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/gadget" v-on:click.native="flag = false"
-              >ガジェット</nuxt-link
+            <nuxt-link to="/thinking" v-on:click.native="flag = false"
+              >考え方</nuxt-link
             >
           </li>
             <li class="sp-ul__li" :class="{ fadein: flag }">
