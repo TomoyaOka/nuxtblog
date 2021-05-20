@@ -2,10 +2,10 @@
   <div class="container unit">
     <article class="entry">
       <p class="entry__breadcrumb">
-        <nuxt-link to="/">トップ</nuxt-link> ― {{ title }}
+        <nuxt-link to="/">トップ</nuxt-link> ― {{ item.title }}
       </p>
-      <h2 class="entry__title">{{ title }}</h2>
-      <div class="entry__content" v-html="content"></div>
+      <h2 class="entry__title">{{ item.title }}</h2>
+      <div class="entry__content" v-html="item.content"></div>
     </article>
   </div>
 </template>
@@ -14,6 +14,18 @@
 import axios from "axios";
 
 export default {
+   head() {
+    return { 
+      title: this.item.title ,
+      meta: [
+        { hid: 'description', name: 'description', content: this.item.description },
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:title', property: 'og:title', content: this.item.title },
+        { hid: 'og:description', property: 'og:description', content: this.item.description },
+        { hid: 'og:url', property: 'og:url', content: 'https://next-blog.site/'+this.$route.params.id+'/'},
+      ],
+    }
+  },
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media/${params.slug}`,
@@ -21,12 +33,10 @@ export default {
         headers: { "X-API-KEY": process.env.API_KEY },
       }
     );
-    return data;
+    return {
+      item:data
+      }
   },
-  mounted() {
-    Prism.highlightAll()
-  },
-  
 };
 </script>
 
