@@ -3,7 +3,7 @@ const { API_KEY } = process.env;
 
 export default {
   mode: 'universal',
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  target: 'static',
 
 
 
