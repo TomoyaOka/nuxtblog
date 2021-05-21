@@ -2,6 +2,7 @@ require('dotenv').config();
 const { API_KEY } = process.env;
 
 export default {
+  mode: 'universal',
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -11,7 +12,8 @@ export default {
     title: 'Next!!',
     
     htmlAttrs: {
-      lang: 'ja'
+      lang: 'ja',
+      prefix: 'og: http://ogp.me/ns#',
     },
     meta: [
       { charset: 'utf-8' },
