@@ -24,6 +24,7 @@ export default {
       { hid: 'og:image', property: 'og:image', content: '@/assets/img/next.png' },
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', property: 'twitter:site', content: '@create_toom' },
+      { hid: 'twitter:image', property: 'twitter:image', content: '@/assets/img/next.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
