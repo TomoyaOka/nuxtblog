@@ -25,7 +25,8 @@ export default {
         { hid: 'og:image', property: 'og:image', content: this.item.thumbnail.url },
         { hid: 'og:url', property: 'og:url', content: 'https://next-blog.site/'+this.item.id+'/'},
         { hid: 'twitter:image', property: 'twitter:image', content: this.item.thumbnail.url },
-
+        { hid: 'twitter:title', property: 'twitter:title', content: this.item.title },
+        { hid: 'twitter:description', property: 'twitter:description', content: this.item.description },
       ],
     }
   },
