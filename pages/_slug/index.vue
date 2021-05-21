@@ -19,7 +19,7 @@ export default {
       title: this.item.title ,
       meta: [
         { hid: 'description', name: 'description', content: this.item.description },
-        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
         { hid: 'og:title', property: 'og:title', content: this.item.title },
         { hid: 'og:description', property: 'og:description', content: this.item.description },
         { hid: 'og:image', property: 'og:image', content: this.item.thumbnail.url },
