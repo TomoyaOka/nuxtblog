@@ -141,10 +141,28 @@ $sp: 768px;
       color: #26a69a;
       border-bottom: 1px solid;
       transition: 0.2s;
+      line-height: 1.7;
       &:hover {
         opacity: 0.5;
         transition: 0.2s;
       }
+      @include sp {
+        font-size: 1.3rem;
+      }
+    }
+
+    blockquote {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      padding: 10px;
+      background-color: rgb(235, 235, 235);
+      @include sp {
+        font-size: 1.4rem;
+      }
+    }
+
+    strong {
+      background-color: rgb(235, 235, 235)!important;
     }
   }
 }

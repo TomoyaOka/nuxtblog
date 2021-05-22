@@ -21,10 +21,10 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://next-blog.site/' },
       { hid: 'og:title', property: 'og:title', content: 'Next!!' },
       { hid: 'og:description', property: 'og:description', content: 'HTML.CSS.Nuxt.Vueなど技術面についての記事や筆者の考え方について投稿していくブログです。' },
-      { hid: 'og:image', property: 'og:image', content: '@/assets/img/next.png' },
+      { hid: 'og:image', property: 'og:image', content: '' },
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:site', property: 'twitter:site', content: '@create_toom' },
-      { hid: 'twitter:image', property: 'twitter:image', content: '@/assets/img/next.png' },
+      { hid: 'twitter:image', property: 'twitter:image', content: '' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

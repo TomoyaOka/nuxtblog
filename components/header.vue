@@ -99,6 +99,11 @@ $sp: 768px;
   span {
     color:rgb(228, 228, 228)!important;
   }
+  blockquote {
+    span {
+    color:#333!important;
+    }
+  }
   }
   .card__item {
     background-color: rgb(238, 238, 238);
@@ -134,6 +139,9 @@ $sp: 768px;
   }
   pre {
     background-color: rgb(78, 78, 78);
+  }
+  .footer__copy {
+    color: #333;
   }
 
 }
