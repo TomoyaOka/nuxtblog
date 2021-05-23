@@ -144,6 +144,10 @@ $sp: 768px;
     color: #333;
   }
 
+  u {
+    background-color: #333;
+  }
+
 }
 
 .sepia-mode body {
