@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <a href="https://toom-design.jp/" target="_blank" rel="noopener noreferrer"
+    <a href="https://quality-web.jp/" target="_blank" rel="noopener noreferrer"
       ><div class="sidebar__banner">
         <img src="@/assets/img/hp-banner.png" alt="web制作依頼はこちら" /></div
     ></a>
