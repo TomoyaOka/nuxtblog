@@ -73,7 +73,6 @@ export default {
   },
   sitemap: {
     path: '/sitemap.xml',
-    // host名を設定
     hostname: 'https://next-blog.site/',
     generate: true,
     exclude: [],

@@ -166,7 +166,7 @@ $sp: 768px;
     }
 
     pre {
-      background-color: rgb(22, 22, 22);
+      // background-color: rgb(22, 22, 22);
       margin: 10px auto;
       padding: 10px;
       overflow: auto;

@@ -138,7 +138,7 @@ $sp: 768px;
   }
   }
   pre {
-    background-color: rgb(78, 78, 78);
+    // background-color: rgb(78, 78, 78);
   }
   .footer__copy {
     color: #333;
