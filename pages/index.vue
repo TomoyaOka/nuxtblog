@@ -28,7 +28,7 @@ export default {
     };
   },
   head: {
-    script: [],
+    title: 'Next!!',
   },
   async asyncData({ params }) {
     const page = params.p || "1";

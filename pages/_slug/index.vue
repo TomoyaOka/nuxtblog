@@ -5,31 +5,62 @@
         <nuxt-link to="/">トップ</nuxt-link> ― {{ item.title }}
       </p>
       <h2 class="entry__title">{{ item.title }}</h2>
-      <div class="entry__content" v-html="item.content"></div>
+      <div class="entry__content" v-html="content"></div>
     </article>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import cheerio from "cheerio";
+import hljs from "highlight.js";
 
 export default {
-   head() {
-    return { 
-      title: this.item.title ,
+  head() {
+    return {
+      title: this.item.title + ' - Next!!',
       meta: [
-        { hid: 'description', name: 'description', content: this.item.description },
-        { hid: 'og:type', property: 'og:type', content: 'website' },
-        { hid: 'og:title', property: 'og:title', content: this.item.title },
-        { hid: 'og:description', property: 'og:description', content: this.item.description },
-        { hid: 'og:image', property: 'og:image', content: this.item.thumbnail.url },
-        { hid: 'og:url', property: 'og:url', content: 'https://next-blog.site/'+this.item.id+'/'},
-        { hid: 'twitter:image', property: 'twitter:image', content: this.item.thumbnail.url },
-        { hid: 'twitter:title', property: 'twitter:title', content: this.item.title },
-        { hid: 'twitter:description', property: 'twitter:description', content: this.item.description },
+        {
+          hid: "description",
+          name: "description",
+          content: this.item.description,
+        },
+        { hid: "og:type", property: "og:type", content: "website" },
+        { hid: "og:title", property: "og:title", content: this.item.title },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.item.description,
+        },
+        {
+          hid: "og:image",
+          property: "og:image",
+          content: this.item.thumbnail.url,
+        },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: "https://next-blog.site/" + this.item.id + "/",
+        },
+        {
+          hid: "twitter:image",
+          property: "twitter:image",
+          content: this.item.thumbnail.url,
+        },
+        {
+          hid: "twitter:title",
+          property: "twitter:title",
+          content: this.item.title,
+        },
+        {
+          hid: "twitter:description",
+          property: "twitter:description",
+          content: this.item.description,
+        },
       ],
-    }
+    };
   },
+
   async asyncData({ params }) {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media/${params.slug}`,
@@ -37,20 +68,30 @@ export default {
         headers: { "X-API-KEY": process.env.API_KEY },
       }
     );
+    const $ = cheerio.load(data.content);
+    $("pre code").each((_, elm) => {
+      const result = hljs.highlightAuto($(elm).text());
+      $(elm).html(result.value);
+      $(elm).addClass("hljs");
+    });
     return {
-      item:data
-      }
+      item: data,
+      content: $.html(),
+    };
   },
 };
 </script>
 
 <style lang="scss">
+@import "highlight.js/styles/hybrid.css";
+
 $sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
   }
 }
+
 .entry {
   margin: 30px 0 100px 0;
   padding: 0 20px;
@@ -162,7 +203,7 @@ $sp: 768px;
     }
 
     strong {
-      background-color: rgb(235, 235, 235)!important;
+      background-color: rgb(235, 235, 235) !important;
     }
   }
 }

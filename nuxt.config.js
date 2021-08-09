@@ -1,3 +1,4 @@
+import axios from 'axios'
 require('dotenv').config();
 const { API_KEY } = process.env;
 
@@ -8,7 +9,6 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Next!!',
-    
     htmlAttrs: {
       lang: 'ja',
     },
