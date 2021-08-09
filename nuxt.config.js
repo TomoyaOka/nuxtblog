@@ -77,6 +77,18 @@ export default {
     hostname: 'https://next-blog.site/',
     generate: true,
     exclude: [],
+    routes (callback) {
+      axios.get("https://nuxtblog.microcms.io/api/v1/media", {
+          headers: { "X-API-KEY": process.env.API_KEY }
+        })
+      .then((res) => {
+        var routes = res.data.contents.map((item) => {
+          return "/media/" + item.id
+        })
+        callback(null, routes)
+      })
+      .catch(callback)
+    }
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

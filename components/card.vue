@@ -2,7 +2,7 @@
   <div>
     <article class="card">
       <nuxt-link
-        :to="item.id"
+        :to="'/media/' + item.id "
         v-for="item in items"
         :key="item.id"
         class="card__item"
