@@ -59,9 +59,9 @@
         </ul>
 
         <p class="sp-text">その他リンク</p>
-        <a href="https://toom-design.jp/" class="link">ポートフォリオサイト</a>
-        <a href="https://twitter.com/Create_toom" class="link mb10 mt10">Twitter:@Create_toom</a>
-        <a href="https://note.com/toom_design" class="link">note:toom-design</a>
+        <a href="https://q-development.org/" class="link" target="_blank" rel="noopener noreferrer">ポートフォリオサイト</a>
+        <a href="https://twitter.com/Create_toom" class="link mb10 mt10" target="_blank" rel="noopener noreferrer">Twitter:@Create_toom</a>
+        <a href="https://note.com/toom_design" class="link"  target="_blank" rel="noopener noreferrer">note:toom-design</a>
       </nav>
     </header>
   </div>
