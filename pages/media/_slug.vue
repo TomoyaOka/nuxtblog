@@ -4,6 +4,9 @@
       <p class="entry__breadcrumb">
         <nuxt-link to="/">トップ</nuxt-link> ― {{ item.title }}
       </p>
+      <p class="day">公開日：<time>{{ new Date(item.publishedAt).toLocaleDateString() }}</time></p>
+      <p class="day-reup">更新日：<time>{{ new Date(item.updatedAt).toLocaleDateString() }}</time></p>
+
       <h2 class="entry__title">{{ item.title }}</h2>
       <div class="entry__content" v-html="content"></div>
     </article>
@@ -117,6 +120,29 @@ $sp: 768px;
       transition: 0.2s;
     }
   }
+
+  .day {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    margin-right: 30px;
+    float: left;
+    @include sp {
+      font-size: 1.3rem;
+      margin-right: 2rem;
+    }
+    &-reup {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    @include sp {
+      font-size: 1.3rem;
+    }
+    }
+  }
+  time {
+    display: inline-block;
+    font-size: 1.4rem;
+  }
+
   &__title {
     font-size: 2.5rem;
     font-weight: bold;
