@@ -7,3 +7,10 @@ $sp:768px;
     @content;
   }
 }
+
+$mini:320px;
+@mixin mini {
+  @media (max-width: ($mini)) {
+    @content;
+  }
+}
