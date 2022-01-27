@@ -62,10 +62,16 @@ export default {
     '@nuxtjs/sitemap',
     '@nuxtjs/markdownit',
     '@nuxtjs/google-gtag',
+    'nuxt-webfontloader',
     ['@nuxtjs/google-analytics', {
       id: 'G-5V3VF5LL3P'
     }],
   ],
+  webfontloader: {
+    google: {
+      families: ['Noto+Sans+JP:400,700'] 
+    }
+  },
 
   'google-gtag': {
     id: 'G-5V3VF5LL3P',

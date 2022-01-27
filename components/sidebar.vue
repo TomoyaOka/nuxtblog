@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <a href="https://quality-web.jp/" target="_blank" rel="noopener noreferrer"
+    <a href="https://qws-o.com/" target="_blank" rel="noopener noreferrer"
       ><div class="sidebar__banner">
         <img src="@/assets/img/hp-banner.png" alt="web制作依頼はこちら" /></div
     ></a>
@@ -86,6 +86,7 @@ $sp: 768px;
 
     .text {
       font-size: 1.6rem;
+      line-height: 1.5;
       padding: 0 25px;
       @include sp {
         font-size: 1.4rem;

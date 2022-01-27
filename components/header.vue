@@ -9,13 +9,7 @@
             <nuxt-link to="/technology">技術系</nuxt-link>
           </li>
           <li class="nav__ul-li">
-            <nuxt-link to="/design">デザイン</nuxt-link>
-          </li>
-          <li class="nav__ul-li">
             <nuxt-link to="/thinking">考え方</nuxt-link>
-          </li>
-          <li class="nav__ul-li">
-            <nuxt-link to="/application">アプリ</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -27,11 +21,11 @@
       </div>
       <!--  -->
       <!-- SP -->
-      <div id="menu-open" :class="{ active: flag }" v-on:click="flag = !flag">
+      <button id="menu-open" :class="{ active: flag }" v-on:click="flag = !flag">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
       <div id="menu-bg" :class="{ open: flag }" v-on:click="flag = false"></div>
       <nav id="menu-body" :class="{ open: flag }">
         <p class="sp-text">カテゴリー</p>
@@ -42,26 +36,16 @@
             >
           </li>
           <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/design" v-on:click.native="flag = false"
-              >デザイン</nuxt-link
-            >
-          </li>
-          <li class="sp-ul__li" :class="{ fadein: flag }">
             <nuxt-link to="/thinking" v-on:click.native="flag = false"
               >考え方</nuxt-link
-            >
-          </li>
-            <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/application" v-on:click.native="flag = false"
-              >アプリ</nuxt-link
             >
           </li>
         </ul>
 
         <p class="sp-text">その他リンク</p>
         <a href="https://q-development.org/" class="link" target="_blank" rel="noopener noreferrer">ポートフォリオサイト</a>
-        <a href="https://twitter.com/Create_toom" class="link mb10 mt10" target="_blank" rel="noopener noreferrer">Twitter:@Create_toom</a>
-        <a href="https://note.com/toom_design" class="link"  target="_blank" rel="noopener noreferrer">note:toom-design</a>
+        <a href="https://twitter.com/Create_toom" class="link mb10 mt10" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://note.com/toom_design" class="link"  target="_blank" rel="noopener noreferrer">note</a>
       </nav>
     </header>
   </div>
@@ -220,7 +204,7 @@ $sp: 768px;
   @include sp {
     position: fixed;
     width: 100%;
-    height: 70px;
+    height: 55px;
     padding: 28px;
     z-index: 1000;
   }
@@ -242,7 +226,7 @@ $sp: 768px;
     display: flex;
     justify-content: space-between;
     align-content: center;
-    width: 500px;
+    width: 200px;
     @include sp {
       display: none;
     }
@@ -348,10 +332,11 @@ $sp: 768px;
   }
   .link {
     display: block;
-    width: 100%;
     font-size: 1.4rem;
     font-weight: 800;
-    padding: 25px 20px;
+    padding: 5px 20px;
+    margin: 15px 0;
+    text-decoration: underline;
   }
 }
 

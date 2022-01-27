@@ -7,12 +7,6 @@
         <nuxt-link class="front__content border" to="/thinking"
           ><img src="@/assets/img/thinking.png"
         /></nuxt-link>
-        <nuxt-link class="front__content border" to="/design"
-          ><img src="@/assets/img/design.png"
-        /></nuxt-link>
-        <nuxt-link class="front__content border" to="/application"
-          ><img src="@/assets/img/application.png"
-        /></nuxt-link>
     </div>
     <h2 class="card-title">最新記事</h2>
     <Card :items="items" />

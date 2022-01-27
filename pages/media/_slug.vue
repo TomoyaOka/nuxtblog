@@ -146,10 +146,11 @@ $sp: 768px;
   &__title {
     font-size: 2.5rem;
     font-weight: bold;
+    line-height: 1.5;
     margin-bottom: 50px;
     @include sp {
       font-size: 2rem;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
   }
   &__content {

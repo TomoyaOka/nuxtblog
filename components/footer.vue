@@ -5,7 +5,7 @@
         <p class="sns"><a href="https://twitter.com/Create_toom"><img src="@/assets/img/twitter.png"></a></p>
         <p class="sns"><a href="#"><img src="@/assets/img/inst.png"></a></p>
       </div>
-      <p class="footer__copy">©copyright 2021.5.30 Next!!</p>
+      <p class="footer__copy">©copyright 2022 Next!!</p>
     </footer>
   </div>
 </template>
@@ -32,10 +32,10 @@ $sp:768px;
     align-items: center;
     margin: 30px 0;
     .sns {
-    width: 50px;
+    width: 40px;
     margin: 10px;
     @include sp {
-      width: 40px;
+      width: 30px;
     }
     img {
       width: 100%;
