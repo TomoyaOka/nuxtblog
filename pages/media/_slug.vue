@@ -99,7 +99,7 @@ $sp: 768px;
   margin: 30px 0 100px 0;
   padding: 0 20px;
   @include sp {
-    padding: 0 15px;
+    padding: 0;
   }
   &__breadcrumb {
     font-size: 1.4rem;
