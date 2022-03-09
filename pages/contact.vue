@@ -4,7 +4,43 @@
     <div class="flex">
       <main class="main">
         <div class="page-cover">
-          <p class="contact__text">準備中</p>
+          <section class="contact">
+            <form>
+              <dl>
+                <dd><label for="subject">件名</label></dd>
+                <dt>
+                  <input
+                    id="subject"
+                    v-model="postData.subject"
+                    name="subject"
+                    type="text"
+                  />
+                </dt>
+              </dl>
+              <dl>
+                <dd><label for="name">お名前</label></dd>
+                <dt>
+                  <input
+                    id="name"
+                    v-model="postData.name"
+                    name="name"
+                    type="text"
+                  />
+                </dt>
+              </dl>
+              <dl>
+                <dd><label for="content">お問い合わせ内容</label></dd>
+                <dt>
+                  <textarea
+                    id="content"
+                    v-model="postData.content"
+                    name="content"
+                  />
+                </dt>
+              </dl>
+              <button type="submit" @click="handleSubmit">送信する</button>
+            </form>
+          </section>
         </div>
       </main>
       <Sidebar />
@@ -13,15 +49,35 @@
 </template>
 
 <script>
-  export default {
+import axios from 'axios'
+export default {
+  data() {
+    return {
+      postData: {
+        name: '',
+        subject: '',
+        content: '',
+      },
+    }
+  },
   head: {
-    script: [],
+    script: []
   },
   head() {
     return {
-      title: ' 意見・お問い合わせ - Next'
-    }
-  }
+      title: " 意見・お問い合わせ - Next"
+    };
+  },
+  methods: {
+    async handleSubmit() {
+      await axios.post('https://nuxtblog.microcms.io/api/v1/contact', this.postData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'X-MICROCMS-API-KEY': '4ede2e2b-eb03-4493-88e6-4c81621c4858',
+        },
+      })
+    },
+  },
 };
 </script>
 
@@ -58,7 +114,4 @@ $sp: 768px;
 .contact__text {
   font-size: var(--md);
 }
-
-
-
 </style>
