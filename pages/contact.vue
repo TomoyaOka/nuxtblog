@@ -67,7 +67,7 @@ export default {
   },
   head() {
     return {
-      title: " 意見・お問い合わせ - Next"
+      title: "ご意見・お問い合わせ - Next"
     };
   },
   methods: {
