@@ -1,25 +1,14 @@
 <template>
   <div class="cover">
-    <LargeTitle name="意見・お問い合わせ" />
+    <LargeTitle name="ご意見・お問い合わせ" />
     <div class="flex">
-      <main class="main">
+      <main class="main page">
         <div class="page-cover">
           <section class="contact">
-            <form>
-              <dl>
-                <dd><label for="subject">件名</label></dd>
-                <dt>
-                  <input
-                    id="subject"
-                    v-model="postData.subject"
-                    name="subject"
-                    type="text"
-                  />
-                </dt>
-              </dl>
-              <dl>
-                <dd><label for="name">お名前</label></dd>
-                <dt>
+            <form class="form">
+              <dl class="form__item">
+                <dd class="form__name"><label for="name">お名前<span class="mark _red">必須</span></label></dd>
+                <dt class="form__input">
                   <input
                     id="name"
                     v-model="postData.name"
@@ -28,9 +17,22 @@
                   />
                 </dt>
               </dl>
-              <dl>
-                <dd><label for="content">お問い合わせ内容</label></dd>
-                <dt>
+              <dl class="form__item">
+                <dd class="form__name"><label for="subject">件名<span class="mark _gray">任意</span></label></dd>
+                <dt class="form__input">
+                  <input
+                    id="subject"
+                    v-model="postData.subject"
+                    name="subject"
+                    type="text"
+                  />
+                </dt>
+              </dl>
+              <dl class="form__item">
+                <dd class="form__name">
+                  <label for="content">お問い合わせ内容<span class="mark _red">必須</span></label>
+                </dd>
+                <dt class="form__input">
                   <textarea
                     id="content"
                     v-model="postData.content"
@@ -38,7 +40,7 @@
                   />
                 </dt>
               </dl>
-              <button type="submit" @click="handleSubmit">送信する</button>
+              <button id="submit" type="submit" @click="handleSubmit">送信する</button>
             </form>
           </section>
         </div>
@@ -49,16 +51,16 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   data() {
     return {
       postData: {
-        name: '',
-        subject: '',
-        content: '',
-      },
-    }
+        name: "",
+        subject: "",
+        content: ""
+      }
+    };
   },
   head: {
     script: []
@@ -70,14 +72,18 @@ export default {
   },
   methods: {
     async handleSubmit() {
-      await axios.post('https://nuxtblog.microcms.io/api/v1/contact', this.postData, {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-MICROCMS-API-KEY': 'c1679af6072a4a6297e60b18207645d24176',
-        },
-      })
-    },
-  },
+      await axios.post(
+        "https://nuxtblog.microcms.io/api/v1/contact",
+        this.postData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "X-MICROCMS-API-KEY": "c1679af6072a4a6297e60b18207645d24176"
+          }
+        }
+      );
+    }
+  }
 };
 </script>
 
@@ -96,7 +102,11 @@ $sp: 768px;
     width: 100%;
   }
 }
-
+.page {
+  @include sp {
+    padding: 0;
+  }
+}
 .page-cover {
   background-color: var(--white-color);
   border-radius: 2rem;
@@ -113,5 +123,73 @@ $sp: 768px;
 
 .contact__text {
   font-size: var(--md);
+}
+
+.form {
+  &__item {
+    margin-bottom: 2rem;
+  }
+
+  &__name {
+    font-size: var(--sm);
+    padding-bottom: 0.6rem;
+
+    .mark {
+      display: inline-block;
+      width: 5rem;
+      font-size: calc(var(--sm) - 0.2rem);
+      color: var(--white-color);
+      text-align: center;
+      padding: 0.4rem 0 0.3rem 0;
+      margin-left: 1rem;
+      position: relative;
+      top: -0.1rem;
+
+      &._red {
+      background-color: rgb(218, 31, 31);
+      }
+      &._gray {
+      background-color: rgb(71, 71, 71);
+      }
+    }
+  }
+  &__input {
+    display: block;
+    input {
+      width: 70rem;
+      max-width: 100%;
+      height: 3rem;
+      font-size: var(--sm);
+      font-weight: normal;
+      border: 1px #333 solid;
+      padding: 0 1rem;
+    }
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      height: 30rem;
+      border: 1px #333 solid;
+      font-size: var(--sm);
+      font-weight: normal;
+      line-height: 1.5;
+      padding: 1rem;
+    }
+  }
+
+  #submit {
+    display: block;
+    width: 40rem;
+    max-width: 100%;
+    border: 1px #333 solid;
+    font-size: var(--sm);
+    text-align: center;
+    padding: 2rem;
+    margin: 3rem auto 0 auto;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: #333;
+      color: var(--white-color);
+    }
+  }
 }
 </style>
