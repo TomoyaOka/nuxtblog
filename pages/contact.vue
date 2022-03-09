@@ -7,7 +7,7 @@
           <section class="contact">
             <form class="form">
               <dl class="form__item">
-                <dd class="form__name"><label for="name">お名前<span class="mark _red">必須</span></label></dd>
+                <dd class="form__name"><label for="name">お名前<span class="mark _gray">任意</span></label></dd>
                 <dt class="form__input">
                   <input
                     id="name"
@@ -86,7 +86,7 @@ export default {
   },
   computed: {
     isButton() {
-      if (this.postData.name && this.postData.content) {
+      if (this.postData.content) {
         return false;
       } else {
         return true;
