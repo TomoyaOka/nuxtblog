@@ -78,7 +78,7 @@ export default {
         {
           headers: {
             "Content-Type": "application/json",
-            "X-MICROCMS-API-KEY": "c1679af6072a4a6297e60b18207645d24176"
+            "X-MICROCMS-API-KEY": process.env.API_KEY
           }
         }
       );
@@ -140,7 +140,7 @@ $sp: 768px;
       font-size: calc(var(--sm) - 0.2rem);
       color: var(--white-color);
       text-align: center;
-      padding: 0.4rem 0 0.3rem 0;
+      padding: 0.4rem 0 0.1rem 0;
       margin-left: 1rem;
       position: relative;
       top: -0.1rem;
@@ -149,7 +149,7 @@ $sp: 768px;
       background-color: rgb(218, 31, 31);
       }
       &._gray {
-      background-color: rgb(71, 71, 71);
+      background-color: rgb(70, 70, 70);
       }
     }
   }
@@ -160,18 +160,14 @@ $sp: 768px;
       max-width: 100%;
       height: 3rem;
       font-size: var(--sm);
-      font-weight: normal;
-      border: 1px #333 solid;
+      border: 1px rgb(114, 114, 114) solid;
       padding: 0 1rem;
     }
     textarea {
       width: 100%;
       max-width: 100%;
       height: 30rem;
-      border: 1px #333 solid;
-      font-size: var(--sm);
-      font-weight: normal;
-      line-height: 1.5;
+      border: 1px rgb(114, 114, 114) solid;
       padding: 1rem;
     }
   }
