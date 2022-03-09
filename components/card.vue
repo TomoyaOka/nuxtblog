@@ -9,7 +9,7 @@
           <h2 class="card__title">{{ item.title }}</h2>
           <div class="card__bottom">
             <time class="card__day">{{ new Date(item.publishedAt).toLocaleDateString() }}</time>
-            <p class="card__author">POST : Tomoya</p>
+            <p class="card__author">POST : {{ item.postName }}</p>
           </div>
       </nuxt-link>
     </article>
