@@ -40,7 +40,7 @@
                   />
                 </dt>
               </dl>
-              <button id="submit" type="submit" @click="handleSubmit">送信する</button>
+              <button :disabled="isButton" id="submit" type="submit" @click="handleSubmit">送信する</button>
             </form>
           </section>
         </div>
@@ -82,8 +82,17 @@ export default {
           }
         }
       );
+    },
+  },
+  computed: {
+    isButton() {
+      if (this.postData.name && this.postData.content) {
+        return false;
+      } else {
+        return true;
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -176,15 +185,22 @@ $sp: 768px;
     display: block;
     width: 40rem;
     max-width: 100%;
-    border: 1px #333 solid;
+    background-color: rgb(44, 44, 44)!important;
     font-size: var(--sm);
+    color: var(--white-color);
     text-align: center;
     padding: 2rem;
     margin: 3rem auto 0 auto;
     transition: all 0.3s ease;
     &:hover {
-      background-color: #333;
-      color: var(--white-color);
+      background-color: #000;
+    }
+  }
+    button[disabled] {
+    background-color: rgb(194, 194, 194)!important;
+    &:hover {
+    cursor: no-drop;
+    background-color: rgb(194, 194, 194)!important;
     }
   }
 }
