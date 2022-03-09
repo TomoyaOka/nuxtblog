@@ -169,6 +169,7 @@ $sp: 768px;
       max-width: 100%;
       height: 3rem;
       font-size: var(--sm);
+      font-weight: normal;
       border: 1px rgb(114, 114, 114) solid;
       padding: 0 1rem;
     }
@@ -176,6 +177,9 @@ $sp: 768px;
       width: 100%;
       max-width: 100%;
       height: 30rem;
+      font-size: var(--sm);
+      font-weight: normal;
+      line-height: 1.5;
       border: 1px rgb(114, 114, 114) solid;
       padding: 1rem;
     }
