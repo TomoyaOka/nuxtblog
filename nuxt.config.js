@@ -85,7 +85,7 @@ export default {
     exclude: [],
     routes (callback) {
       axios.get("https://nuxtblog.microcms.io/api/v1/media", {
-          headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
+          headers: {'X-MICROCMS-API-KEY': process.env.API_KEY }
         })
       .then((res) => {
         var routes = res.data.contents.map((item) => {
