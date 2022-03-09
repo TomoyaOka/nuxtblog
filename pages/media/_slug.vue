@@ -143,7 +143,7 @@ $sp: 768px;
   @include sp {
     border-radius: 0;
     margin: 2rem 0 3rem 0;
-    padding: 4rem 1rem;
+    padding: 4rem 1.6rem;
   }
   &__breadcrumb {
     font-size: 1.4rem;
