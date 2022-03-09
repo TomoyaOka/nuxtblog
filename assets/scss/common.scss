@@ -2,18 +2,43 @@
   共通のスタイル(使わないものは消して問題なし)
 -----------------------*/
 @font-face {
-  font-family: "kateru-font";
-  src: url(../font/kateru.woff2),
-    url(../font/kateru.woff);
+  font-family: "fonts";
+  src: url(../font/PPObjectSans-Regular.woff2),
+    url(../font/PPObjectSans-Regular.woff);
+}
+
+:root {
+  --base-color:hsl(160, 40%, 22%);
+  --sub-color:hsl(160, 30%, 50%);
+  --bg-color:#F1F5F9;
+  --white-color:#fff;
+  --max:130rem;
+  --xxl:3.2rem;
+  --xl:2.4rem;
+  --md:1.8rem;
+  --sm:1.4rem;
 }
 
 html {
-  font-size: 62.5%!important;
+  font-size: calc(10 / 1400 * 100vw);
+  @media (min-width:1401px) {
+    font-size: 62.5%; 
+  }
+  @media (max-width:767px) {
+    font-size: 62.5%; 
+  }
+  @media (max-width:340px) {
+    font-size: 57%; 
+  }
 }
 
 body {
+  max-width: 3000px;
+  margin: auto;
   color:#333;
-  font-family: 'Noto Sans JP', sans-serif;
+  //font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'fonts', sans-serif;
+  background-color: var(--bg-color);
 }
 
 ::selection {

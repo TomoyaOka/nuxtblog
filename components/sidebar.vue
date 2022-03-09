@@ -1,21 +1,35 @@
 <template>
   <div class="sidebar">
-    <a href="https://qws-o.com/" target="_blank" rel="noopener noreferrer"
-      ><div class="sidebar__banner">
-        <img src="@/assets/img/hp-banner.png" alt="web制作依頼はこちら" /></div
-    ></a>
-    <a
-      href="https://note.com/toom_design"
-      target="_blank"
-      rel="noopener noreferrer"
-      ><div class="sidebar__banner">
-        <img src="@/assets/img/note-banner.png" alt="noteはこちら" /></div
-    ></a>
+    <div class="sidebar__inner">
+      <div class="sidebar__content">
+        <p class="sidebar__title">Categorys</p>
+        <ul class="sidebar__list">
+          <li><nuxt-link to="/htmlcss">HTML / CSS</nuxt-link></li>
+          <li><nuxt-link to="/wordpress">WordPress</nuxt-link></li>
+          <li><nuxt-link to="/javascript">JavaScript</nuxt-link></li>
+          <li><nuxt-link to="/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
+          <li><nuxt-link to="/shopify">Shopify</nuxt-link></li>
+          <li><nuxt-link to="/etc">その他</nuxt-link></li>
+        </ul>
+      </div>
 
-    <div class="sidebar__about">
-      <p class="about">投稿者情報</p>
-      <div class="img"></div>
-      <p class="text">中小規模のお仕事をさせていただいております。デザイン~コーディングまで幅広く活動しております。普段はWordPressでの実装が殆どですが、現在Vue.Nuxtについても学習を進めています。</p>
+      <div class="sidebar__content">
+        <p class="sidebar__title">Links</p>
+        <ul class="sidebar__list">
+          <li><a href="https://note.com/toom_design" target="_blank" rel="noopener noreferrer">note</a></li>
+          <li><a href="https://twitter.com/Create_toom" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://webcommunity.site/" target="_blank" rel="noopener noreferrer">WEB-COMMUNUTY</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar__content">
+        <p class="sidebar__title">Changers</p>
+        <ul class="sidebar__list">
+          <li><nuxt-link v-scroll-to="'#member01'" to="/about/#member01">Tomoya Okada</nuxt-link></li>
+          <li><nuxt-link v-scroll-to="'#member02'" to="/about/#member02">Kyan</nuxt-link></li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </template>
@@ -28,68 +42,64 @@ $sp: 768px;
   }
 }
 .sidebar {
-  width: 30%;
-  margin-top: 50px;
-  padding: 0 10px;
+  width: 23%;
+  min-height: 50rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin: 0 1rem 0 0;
   @include sp {
     width: 100%;
-    margin: 50px auto;
+    margin: 5rem auto;
   }
-  &__banner {
-    width: 90%;
-    margin: 10px auto;
-    transition: 0.2s;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #166d5a;
-      opacity: 0;
-      transition: 0.2s;
-    }
-    &:hover::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #166d5a;
-      opacity: 0.5;
-      transition: 0.2s;
-    }
-    img {
-      width: 100%;
+  &__inner {
+    position: sticky;
+    top: 0;
+    padding: 4rem 2rem;
+  }
+  &__content {
+    margin-bottom: 6rem;
+    @include sp {
+      margin-bottom: 3.4rem;
     }
   }
-  &__about {
-    margin: 80px 0;
-
-    .about {
-      font-size: 2.2rem;
-      font-weight: bold;
-      text-align: center;
+  &__title {
+    font-size: var(--md);
+    margin-bottom: 1.6rem;
+    padding-left: 2rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: var(--base-color);
+      }
+  }
+  &__list {
+    li {
+      font-size: var(--sm);
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0.3rem;
+        transform: translateY(-50%);
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: #333;
+      }
     }
-    .img {
-      width: 150px;
-      height: 150px;
-      background-image: url(@/assets/img/about.png);
-      background-position: center;
-      background-size: 150px;
-      background-repeat: no-repeat;
-      margin: 20px auto;
-    }
-
-    .text {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      padding: 0 25px;
-      @include sp {
-        font-size: 1.4rem;
+    a {
+      &:hover {
+        opacity: 0.7;
+        transition: all 0.3s ease;
       }
     }
   }

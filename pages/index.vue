@@ -1,15 +1,12 @@
 <template>
-  <div class="container">
-    <div class="front">
-        <nuxt-link class="front__content border" to="/technology"
-          ><img src="@/assets/img/technology.png"
-        /></nuxt-link>
-        <nuxt-link class="front__content border" to="/thinking"
-          ><img src="@/assets/img/thinking.png"
-        /></nuxt-link>
+  <div class="cover">
+    <LargeTitle name="Next" />
+    <div class="flex">
+      <main class="main front-page">
+        <Card :items="items" />
+      </main>
+      <Sidebar />
     </div>
-    <h2 class="card-title">最新記事</h2>
-    <Card :items="items" />
   </div>
 </template>
 
@@ -18,27 +15,27 @@ import axios from "axios";
 export default {
   data() {
     return {
-      items: "" /*  itemsにデータを格納   */,
+      items: ""
     };
   },
   head: {
-    title: 'Next!!',
+    title: "Next"
   },
   async asyncData({ params }) {
     const page = params.p || "1";
-    const limit = 4;
+    const limit = 10;
     const {
-      data,
+      data
     } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&offset=${
-        (page - 1) * limit
-      }`,
+      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&offset=${(page -
+        1) *
+        limit}`,
       { headers: { "X-API-KEY": process.env.API_KEY } }
     );
     return {
-      items: data.contents,
+      items: data.contents
     };
-  },
+  }
 };
 </script>
 
@@ -47,165 +44,6 @@ $sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
-  }
-}
-
-.front {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding-top: 40px;
-  &::after {
-    content: "";
-    width: 400px;
-    margin: 20px auto;
-  }
-  &__content {
-    display: block;
-    width: 400px;
-    margin: 20px auto;
-    position: relative;
-    @include sp {
-      margin: 10px auto;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #166d5a;
-      opacity: 0;
-      transition: 0.2s;
-    }
-      &:hover::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #166d5a;
-      opacity: 0.5;
-      transition: 0.2s;
-    }
-    img {
-      width: 100%;
-    }
-  }
-  .border {
-    box-shadow: 2px 2px 5px rgba(51,51,51,.1);
-  }
-}
-
-.card-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #26a69a;
-  border-bottom: 3px solid;
-  margin: 15px 20px;
-  padding: 10px 0;
-  @include sp {
-    font-size: 1.8rem;
-    padding: 5px 0;
-    margin: 10px;
-  }
-}
-
-.card {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  min-height: 600px;
-  margin: 50px 0;
-  @include sp {
-    display: block;
-  }
-  &::before {
-    content: "";
-    width: 340px;
-    order: 1;
-  }
-  &::after {
-    content: "";
-    width: 390px;
-  }
-  &__item {
-    display: block;
-    width: 390px;
-    min-height: 350px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    border: 1px rgba(42, 173, 81,0.2) solid;
-    transition: 0.3s;
-    position: relative;
-    @include sp {
-      width: 90%;
-      margin: 20px auto;
-      border: 1px rgba(42, 173, 81,0.2) solid;
-    }
-    &:hover {
-      border: 1px #26a69a solid;
-      transition: 0.3s;
-    }
-    &-thumbnail {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 230px;
-      border-bottom: 1px rgb(212, 212, 212) solid;
-    }
-    &-text {
-      padding: 5px 10px;
-      .day {
-        font-size: 1.4rem;
-        margin: 10px 0;
-      }
-      .title {
-        font-size: 1.6rem;
-        font-weight: 600;
-        margin-top: 10px;
-      }
-    }
-    img {
-      width: 200px;
-    }
-    .box {
-      display: flex;
-      position: absolute;
-      bottom: 20px;
-      right: 10px;
-      @include sp {
-        bottom: 10px;
-      }
-    }
-    .category {
-      width: fit-content;
-      font-size: 1.6rem;
-      margin-top: 20px;
-      padding: 5px 10px;
-      background-color: rgb(117, 117, 117);
-      color: #fff;
-      @include sp {
-        font-size: 1.3rem;
-        padding: 9px 10px;
-      }
-    }
-    .tag {
-      width: fit-content;
-      font-size: 1.6rem;
-      margin-top: 20px;
-      margin-left: 10px;
-      padding: 5px 10px;
-      background-color: rgb(117, 117, 117);
-      color: #fff;
-      @include sp {
-        font-size: 1.3rem;
-        padding: 9px 10px;
-      }
-    }
   }
 }
 </style>

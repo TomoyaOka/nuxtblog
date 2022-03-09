@@ -1,54 +1,17 @@
 <template>
-  <div class="header-wrap">
     <header class="header">
-      <h1 class="header__title"><nuxt-link to="/">Next!!</nuxt-link></h1>
-      <nav class="nav">
-        <!-- PC -->
-        <ul class="nav__ul">
-          <li class="nav__ul-li">
-            <nuxt-link to="/technology">技術系</nuxt-link>
-          </li>
-          <li class="nav__ul-li">
-            <nuxt-link to="/thinking">考え方</nuxt-link>
-          </li>
-        </ul>
-      </nav>
+      <div class="header__inner">
+      <h1 class="header__title"><nuxt-link to="/">Next</nuxt-link></h1>
       <!-- mode -->
-      <div class="color-switch">
+      <!-- <div class="color-switch">
         <button @click="$colorMode.preference = 'light'" class="light"></button>
         <button @click="$colorMode.preference = 'dark'" class="dark"></button>
         <button @click="$colorMode.preference = 'sepia'" class="sepia"></button>
-      </div>
+      </div> -->
       <!--  -->
-      <!-- SP -->
-      <button id="menu-open" :class="{ active: flag }" v-on:click="flag = !flag">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div id="menu-bg" :class="{ open: flag }" v-on:click="flag = false"></div>
-      <nav id="menu-body" :class="{ open: flag }">
-        <p class="sp-text">カテゴリー</p>
-        <ul class="sp-ul">
-          <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/technology" v-on:click.native="flag = false"
-              >技術系</nuxt-link
-            >
-          </li>
-          <li class="sp-ul__li" :class="{ fadein: flag }">
-            <nuxt-link to="/thinking" v-on:click.native="flag = false"
-              >考え方</nuxt-link
-            >
-          </li>
-        </ul>
-
-        <p class="sp-text">その他リンク</p>
-        <a href="https://q-development.org/" class="link" target="_blank" rel="noopener noreferrer">ポートフォリオサイト</a>
-        <a href="https://twitter.com/Create_toom" class="link mb10 mt10" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://note.com/toom_design" class="link"  target="_blank" rel="noopener noreferrer">note</a>
-      </nav>
+      <Menu />
+      </div>
     </header>
-  </div>
 </template>
 
 <script>
@@ -67,6 +30,29 @@ $sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
+  }
+}
+
+.header {
+  width: 100%;
+  background-color: var(--white-color);
+  padding: 2rem 5rem;
+  z-index: 1000;
+  @include sp {
+    padding: 1.5rem 2.3rem;
+  }
+  &__inner {
+    margin: auto;
+  }
+  &__title {
+    font-size: var(--xl);
+    @include sp {
+      font-size: var(--md);
+    }
+    &:hover {
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
   }
 }
 
@@ -182,177 +168,6 @@ $sp: 768px;
   }
 }
 
-/*-----------------
-      PC-menu
-------------------*/
 
-.header-wrap {
-  @include sp {
-    height: 70px;
-  }
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 150px;
-  background-image: url(@/assets/img/bg_plus.png);
-  background-repeat: repeat;
-  background-position: center;
-  padding: 57px 50px;
-  position: relative;
-  @include sp {
-    position: fixed;
-    width: 100%;
-    height: 55px;
-    padding: 28px;
-    z-index: 1000;
-  }
-  &__title {
-    font-size: 4rem;
-    color: #333;
-    margin-left: 70px;
-    font-family: kateru-font;
-    @include sp {
-      font-size: 2rem;
-      margin-left: 0;
-    }
-  }
-}
-
-.nav {
-  margin-right: 70px;
-  &__ul {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    width: 200px;
-    @include sp {
-      display: none;
-    }
-    &-li {
-      font-size: 2rem;
-      font-weight: bold;
-      a {
-        transition: .2s;
-        &:hover {
-          transition: .2s;
-          color: #26a69a;
-        }
-      }
-    }
-  }
-}
-/*-----------------
-      SP-menu
-------------------*/
-#menu-open {
-  display: none;
-  width: 60px;
-  height: 60px;
-  z-index: 9999;
-  position: relative;
-  top:-3px;
-  transition: 0.2s;
-  @include sp {
-    display: block;
-    width: 40px;
-    height: 20px;
-  }
-  span {
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    left: 6px;
-    background: #555;
-    transition: 0.3s ease-in-out;
-
-    &:nth-child(1) {
-      top:0px;
-    }
-    &:nth-child(2) {
-      top:10px;
-    }
-    &:nth-child(3) {
-      top:20px;
-    }
-  }
-}
-#menu-bg {
-  position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
-  z-index: 9996;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0.5;
-
-  &.open {
-    display: block;
-  }
-}
-#menu-body {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9997;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  transform: translateX(100%);
-  transition: 0.3s;
-
-  &.open {
-    transform: translateX(30%);
-    overflow-y: scroll;
-    transition: 0.3s;
-  }
-
-  .sp {
-    &-text {
-      font-size: 1.8rem;
-      padding: 25px;
-      background-image: url(@/assets/img/bg_plus.png);
-      background-position: center;
-      font-weight: bold;
-    }
-    &-ul {
-      &__li {
-        a {
-          display: block;
-          font-size: 1.6rem;
-          font-weight: bold;
-          padding: 20px 25px;
-        }
-      }
-    }
-  }
-  .link {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: 800;
-    padding: 5px 20px;
-    margin: 15px 0;
-    text-decoration: underline;
-  }
-}
-
-/* ナビ開いてる時のボタン */
-#menu-open.active span:nth-child(1) {
-  top : 10px;
-  left: 6px;
-  background :#555;
-  transform        : rotate(-35deg);
-}
-
-#menu-open.active span:nth-child(2),
-#menu-open.active span:nth-child(3) {
-  top: 10px;
-  background :#555;
-  transform        : rotate(35deg);
-}
 
 </style>

@@ -1,7 +1,12 @@
 <template>
-  <div class="container">
-    <h2 class="card-title mt50">技術</h2>
-    <Card :items="items" />
+  <div class="cover">
+    <LargeTitle name="WordPress" />
+    <div class="flex">
+      <main class="main">
+        <Card :items="items" />
+      </main>
+      <Sidebar />
+    </div>
   </div>
 </template>
 
@@ -10,25 +15,24 @@ import axios from "axios";
   export default {
       data() {
     return {
-      items: "" /*  itemsにデータを格納   */,
+      items: "",
     };
   },
   head: {
     script: [],
-    
   },
   async asyncData() {
     const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]technology`,
+      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]wordpress`,
       { headers: { 'X-API-KEY': process.env.API_KEY } }
     )
     return {
       items: data.contents,
     };
   },
-   head() {
+  head() {
     return {
-      title: '技術系 - Next!!'
+      title: ' WordPress - Next'
     }
   }
 };
@@ -49,5 +53,7 @@ $sp: 768px;
     width: 100%;
   }
 }
+
+
 
 </style>

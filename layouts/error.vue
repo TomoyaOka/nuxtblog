@@ -1,8 +1,14 @@
 <template>
-  <div class="container">
-    <h1 class="error" v-if="error.statusCode === 404"><span>404</span><br>お探しのページは見つかりませんでした。</h1>
-    <h1 v-else>An error occurred</h1>
-    <NuxtLink class="error-top" to="/">トップページへ戻る</NuxtLink>
+  <div class="cover">
+    <LargeTitle name="404 - ページが見つかりません" />
+    <div class="flex">
+      <main class="main">
+        <h1 class="error" v-if="error.statusCode === 404"><span>404</span><br>お探しのページは見つかりませんでした。</h1>
+        <h1 class="error" v-else><span>404</span><br>お探しのページは見つかりませんでした。</h1>
+        <NuxtLink class="error-top" to="/">トップページへ戻る</NuxtLink>
+      </main>
+      <Sidebar />
+    </div>
   </div>
 </template>
 

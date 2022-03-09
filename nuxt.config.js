@@ -8,7 +8,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Next!!',
+    title: 'Next',
     htmlAttrs: {
       lang: 'ja',
     },
@@ -43,7 +43,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-
+    '~plugins/vue-scrollto'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -63,6 +63,7 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/google-gtag',
     'nuxt-webfontloader',
+    // ['vue-scrollto/nuxt', { duration: 300 }],
     ['@nuxtjs/google-analytics', {
       id: 'G-5V3VF5LL3P'
     }],
@@ -122,6 +123,6 @@ export default {
 // ローディングバー設定
 loading: {
     color: 'mediumseagreen',
-    height: '2px'
+    height: '1px'
   },
 }

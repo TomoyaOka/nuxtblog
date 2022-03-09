@@ -1,7 +1,12 @@
 <template>
-  <div class="container">
-    <h2 class="card-title mt50">デザイン</h2>
-    <Card :items="items" />
+  <div class="cover">
+    <LargeTitle name="その他" />
+    <div class="flex">
+      <main class="main">
+        <Card :items="items" />
+      </main>
+      <Sidebar />
+    </div>
   </div>
 </template>
 
@@ -10,7 +15,7 @@ import axios from "axios";
   export default {
       data() {
     return {
-      items: "" /*  itemsにデータを格納   */,
+      items: "",
     };
   },
   head: {
@@ -18,16 +23,16 @@ import axios from "axios";
   },
   async asyncData() {
     const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]design`,
+      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]etc`,
       { headers: { 'X-API-KEY': process.env.API_KEY } }
     )
     return {
       items: data.contents,
     };
   },
-  head() {
+   head() {
     return {
-      title: 'デザイン - Next!!'
+      title: 'その他 - Next'
     }
   }
 };
@@ -48,6 +53,5 @@ $sp: 768px;
     width: 100%;
   }
 }
-
 
 </style>

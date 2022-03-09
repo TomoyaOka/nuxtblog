@@ -1,10 +1,7 @@
 <template>
   <div class="wrap">
     <Header />
-    <div class="flex unit mb100">
     <Nuxt />
-    <Sidebar />
-    </div>
     <Footer />
   </div>
 </template>
@@ -18,8 +15,21 @@ $sp:768px;
 }
 .flex {
   display: flex;
+  justify-content: space-around;
   @include sp {
     display: block;
   }
 }
+
+.main {
+  width: 75%;
+  padding: 0 2rem;
+  @media (min-width:1400px) {
+    width: 70%;
+  }
+  @include sp {
+    width: 100%;
+  }
+}
+
 </style>
