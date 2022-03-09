@@ -73,7 +73,7 @@ export default {
       await axios.post('https://nuxtblog.microcms.io/api/v1/contact', this.postData, {
         headers: {
           'Content-Type': 'application/json',
-          'X-MICROCMS-API-KEY': '4ede2e2b-eb03-4493-88e6-4c81621c4858',
+          'X-MICROCMS-API-KEY': 'c1679af6072a4a6297e60b18207645d24176',
         },
       })
     },

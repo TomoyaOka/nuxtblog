@@ -93,7 +93,7 @@ export default {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media/${params.slug}`,
       {
-        headers: { "X-API-KEY": process.env.API_KEY }
+        headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
       }
     );
     const $ = cheerio.load(data.content);

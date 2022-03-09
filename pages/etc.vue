@@ -24,7 +24,7 @@ import axios from "axios";
   async asyncData() {
     const { data } = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]etc`,
-      { headers: { 'X-API-KEY': process.env.API_KEY } }
+      { headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY } }
     )
     return {
       items: data.contents,

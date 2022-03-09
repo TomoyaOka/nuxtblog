@@ -30,7 +30,7 @@ export default {
       `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&offset=${(page -
         1) *
         limit}`,
-      { headers: { "X-API-KEY": process.env.API_KEY } }
+      { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
     );
     return {
       items: data.contents
