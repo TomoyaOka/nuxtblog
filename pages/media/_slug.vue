@@ -210,6 +210,9 @@ $sp: 768px;
         font-size: 1.8rem;
         padding: 0.5rem 0;
       }
+      span {
+        color: var(--sub-color)!important;
+      }
     }
     h3 {
       font-size: var(--md);
@@ -221,6 +224,9 @@ $sp: 768px;
       @include sp {
         font-size: 1.6rem;
         padding: 0 0.5rem;
+      }
+      span {
+        color: var(--sub-color)!important;
       }
     }
     p {
