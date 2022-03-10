@@ -167,7 +167,7 @@ $sp: 768px;
     input {
       width: 70rem;
       max-width: 100%;
-      height: 3rem;
+      height: 5rem;
       font-size: var(--sm);
       font-weight: normal;
       border: 1px rgb(114, 114, 114) solid;
