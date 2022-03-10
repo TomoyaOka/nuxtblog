@@ -23,7 +23,7 @@ export default {
   },
   async asyncData({ params }) {
     const page = params.p || "1";
-    const limit = 10;
+    const limit = 12;
     const {
       data
     } = await axios.get(
