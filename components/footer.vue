@@ -20,7 +20,7 @@
         </ul>
         </div>
       </div>
-      <p class="footer__copy">©copyright 2021 Next</p>
+      <p class="footer__copy">&copy;copyright 2021 Next</p>
     </footer>
 </template>
 
