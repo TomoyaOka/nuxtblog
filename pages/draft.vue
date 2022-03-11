@@ -21,14 +21,18 @@
           <h2 class="entry__title">{{ item.title }}</h2>
 
           <div class="entry__toc">
-          <h4 class="entry__toc-title">目次</h4>
-          <ul class="entry__toc-lists">
-            <li v-for="item in toc" :key="item.id" :class="`list ${item.name}`">
-              <n-link v-scroll-to="`#${item.id}`" to>
-                {{ item.text }}
-              </n-link>
-            </li>
-          </ul>
+            <h4 class="entry__toc-title">目次</h4>
+            <ul class="entry__toc-lists">
+              <li
+                v-for="item in toc"
+                :key="item.id"
+                :class="`list ${item.name}`"
+              >
+                <n-link v-scroll-to="`#${item.id}`" to>
+                  {{ item.text }}
+                </n-link>
+              </li>
+            </ul>
           </div>
           <div class="entry__content" v-html="content"></div>
         </article>
@@ -47,6 +51,11 @@ export default {
   data() {
     return {
       data: {}
+    };
+  },
+  head() {
+    return {
+      meta: [{ hid: "robots", name: "robots", content: "noindex" }]
     };
   },
   async created() {
