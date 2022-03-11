@@ -36,7 +36,7 @@
             </div>
             <div id="member02" class="about-member__list">
               <a href="https://twitter.com/kyan_8gi" class="name" target="_blank" rel="noopener noreferrer"><u>Kyan</u></a>
-              <p class="text">ー</p>
+              <p class="text">名古屋市を拠点にWEB制作（主にコーディング）をしています。<br>Liquidを使用したShopify構築ができます。<br>音楽とドラムと本が好きです。</p>
             </div>
           </section>
           <section id="works" class="about-works">
