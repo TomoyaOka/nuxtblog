@@ -58,7 +58,7 @@ export default {
       meta: [{ hid: "robots", name: "robots", content: "noindex" }]
     };
   },
-  async created() {
+  async created({ params }) {
     const query = this.$route.query;
     if (query.id === undefined || query.draftKey === undefined) {
       return;
@@ -87,7 +87,12 @@ export default {
       body: $.html(),
       toc
     };
-  }
+  },
+  validate({ params, query }) {
+  if (query.preview) {
+    return true
+    }
+}
 };
 </script>
 

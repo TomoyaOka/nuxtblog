@@ -269,6 +269,23 @@ $sp: 768px;
       }
     }
 
+    li {
+      font-size: var(--sm);
+      margin-bottom: 1rem;
+      padding-left: 1.4rem;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 0.8rem;
+        height: 1px;
+        background-color: rgb(151, 151, 151);
+      }
+    }
+
     blockquote {
       font-size: 1.6rem;
       line-height: 1.6;
@@ -291,6 +308,14 @@ $sp: 768px;
       @include sp {
         border-radius: 0.8rem;
         padding: 2rem 1rem !important;
+      }
+    }
+
+    .embedly-embed {
+      max-width: 100%;
+      height: 40rem;
+      @include sp {
+      height: 30rem;
       }
     }
   }

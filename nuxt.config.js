@@ -44,7 +44,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~plugins/vue-scrollto',
-    '~plugins/vee-validate'
+    '~plugins/vee-validate',
+    // '~/plugins/preview.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
