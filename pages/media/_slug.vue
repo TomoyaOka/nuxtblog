@@ -19,6 +19,10 @@
           </p>
 
           <h2 class="entry__title">{{ item.title }}</h2>
+          <div class="entry__img">
+            <span class="tag">{{ item.category.name }}</span>
+            <img :src='item.thumbnail.url' alt="">
+          </div>
 
           <div class="entry__toc">
           <h4 class="entry__toc-title">目次</h4>
@@ -242,6 +246,9 @@ $sp: 768px;
       margin: 1.5rem auto;
       text-align: center;
     }
+    // code {
+    //   background-color: rgb(187, 187, 187);
+    // }
     pre {
       margin: 1rem auto;
       padding: 1rem;
@@ -249,9 +256,17 @@ $sp: 768px;
       @include sp {
         padding: 0;
       }
-      code {
-        font-size: 1.4rem;
+    code {
+      font-size: 1.4rem;
+      font-family: "fonts", sans-serif !important;
+      line-height: 1.6;
+      border-radius: 1.2rem;
+      padding: 3rem 2rem !important;
+      @include sp {
+        border-radius: 0.8rem;
+        padding: 2rem 1rem !important;
       }
+    }
     }
 
     a {
@@ -300,16 +315,6 @@ $sp: 768px;
       background-color: rgb(235, 235, 235) !important;
     }
 
-    code {
-      font-family: "fonts", sans-serif !important;
-      line-height: 1.6;
-      border-radius: 1.2rem;
-      padding: 3rem 2rem !important;
-      @include sp {
-        border-radius: 0.8rem;
-        padding: 2rem 1rem !important;
-      }
-    }
 
     .embedly-embed {
       max-width: 100%;
@@ -362,6 +367,34 @@ $sp: 768px;
           height: 0.5rem;
           background-color: var(--sub-color);
         }
+      }
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+    border: 3px var(--base-color) solid;
+    margin-bottom: 2rem;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .tag {
+      display: inline-block;
+      min-width: 10rem;
+      background-color: var(--base-color);
+      font-size: var(--sm);
+      color: var(--white-color);
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      padding: 2rem 0.5rem;
+      @include sp {
+        top: -0.2rem;
+        left: -0.2rem;
+        padding: 1rem 0.5rem;
       }
     }
   }
