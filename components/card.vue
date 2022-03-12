@@ -86,6 +86,9 @@ $sp: 768px;
       background-repeat: no-repeat;
       background-position: center;
       border-bottom: 1px rgb(226, 226, 226) solid;
+      @include sp {
+        padding-top: 50%;
+      }
     }
     &__title {
       min-height: 6rem;

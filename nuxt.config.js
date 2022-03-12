@@ -127,6 +127,36 @@ export default {
         component: resolve(__dirname, 'pages/category/htmlcss.vue'),
         name: 'htmlcss',
       })
+      // VueNuxtページルーティング
+      routes.push({
+        path: '/category/:vuenuxt/page/:p',
+        component: resolve(__dirname, 'pages/category/vuenuxt.vue'),
+        name: 'vuenuxt',
+      })
+      // shopifyページルーティング
+      routes.push({
+        path: '/category/:shopify/page/:p',
+        component: resolve(__dirname, 'pages/category/shopify.vue'),
+        name: 'shopify',
+      })
+      // wordpressページルーティング
+      routes.push({
+        path: '/category/:wordpress/page/:p',
+        component: resolve(__dirname, 'pages/category/wordpress.vue'),
+        name: 'wordpress',
+      })
+      // etcページルーティング
+      routes.push({
+        path: '/category/:etc/page/:p',
+        component: resolve(__dirname, 'pages/category/etc.vue'),
+        name: 'etc',
+      })
+      // javascriptページルーティング
+      routes.push({
+        path: '/category/:javascript/page/:p',
+        component: resolve(__dirname, 'pages/category/javascript.vue'),
+        name: 'javascript',
+      })
     },
   },
 // ローディングバー設定
@@ -136,7 +166,7 @@ loading: {
   },
   generate: {
     async routes() {
-      const limit = 2
+      const limit = 12
       const category = 'htmlcss'
       const range = (start, end) =>
         [...Array(end - start + 1)].map((_, i) => start + i)
@@ -152,7 +182,7 @@ loading: {
           )
 
       const categories = await axios
-        .get(`https://nuxtblog.microcms.io/api/v1/media`, {
+        .get(`https://nuxtblog.microcms.io/api/v1/category`, {
           headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
         })
           .then(({ data }) => {
