@@ -121,11 +121,61 @@ export default {
         component: resolve(__dirname, 'pages/index.vue'),
         name: 'page',
       })
+      // HTMLCSSページルーティング
+      routes.push({
+        path: '/category/:htmlcss/page/:p',
+        component: resolve(__dirname, 'pages/category/htmlcss.vue'),
+        name: 'htmlcss',
+      })
     },
   },
 // ローディングバー設定
 loading: {
     color: 'mediumseagreen',
     height: '1px'
+  },
+  generate: {
+    async routes() {
+      const limit = 2
+      const category = 'htmlcss'
+      const range = (start, end) =>
+        [...Array(end - start + 1)].map((_, i) => start + i)
+
+        const pages = await axios
+        .get(`https://nuxtblog.microcms.io/api/v1/media`, {
+          headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
+        })
+          .then((res) =>
+            range(1, Math.ceil(res.data.totalCount / 1000)).map((p) => ({
+              route: `/page/${p}`,
+            }))
+          )
+
+      const categories = await axios
+        .get(`https://nuxtblog.microcms.io/api/v1/media`, {
+          headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
+        })
+          .then(({ data }) => {
+            return data.contents.map((content) => content.id)
+          });
+
+      // カテゴリーページのページング
+      const categoryPages = await Promise.all(
+        categories.map(() =>
+          axios.get(
+            `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&filters=category[equals]${category}`,
+            { headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY } }
+          )
+            .then((res) =>
+              range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
+                route: `/category/${category}/page/${p}`,
+              })))
+      )
+      )
+
+      // 2次元配列になってるのでフラットにする
+      const flattenCategoryPages = [].concat.apply([], categoryPages)
+      return [...pages,...flattenCategoryPages]
+    },
   },
 }

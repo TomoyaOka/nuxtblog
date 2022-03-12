@@ -21,9 +21,14 @@ import axios from "axios";
   head: {
     script: [],
   },
-  async asyncData() {
+  async asyncData({params}) {
+    const page = params.p || '1'
+    const categoryId = 'htmlcss'
+    const limit = 2
     const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?filters=category[equals]htmlcss`,
+      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}${
+        categoryId === undefined ? '' : `&filters=category[equals]${categoryId}`
+      }&offset=${(page - 1) * limit}`,
       { headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY } }
     )
     return {

@@ -1,15 +1,15 @@
 <template>
-  <div class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar__inner">
       <div class="sidebar__content">
         <p class="sidebar__title">Categorys</p>
         <ul class="sidebar__list">
-          <li><nuxt-link to="/htmlcss">HTML / CSS</nuxt-link></li>
-          <li><nuxt-link to="/wordpress">WordPress</nuxt-link></li>
-          <li><nuxt-link to="/javascript">JavaScript</nuxt-link></li>
-          <li><nuxt-link to="/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
-          <li><nuxt-link to="/shopify">Shopify</nuxt-link></li>
-          <li><nuxt-link to="/etc">その他</nuxt-link></li>
+          <li><nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link></li>
+          <li><nuxt-link to="/category/wordpress">WordPress</nuxt-link></li>
+          <li><nuxt-link to="/category/javascript">JavaScript</nuxt-link></li>
+          <li><nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
+          <li><nuxt-link to="/category/shopify">Shopify</nuxt-link></li>
+          <li><nuxt-link to="/category/etc">その他</nuxt-link></li>
         </ul>
       </div>
 
@@ -31,7 +31,7 @@
       </div>
 
     </div>
-  </div>
+  </aside>
 </template>
 
 <style lang="scss">

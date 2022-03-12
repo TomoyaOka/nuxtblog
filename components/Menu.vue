@@ -8,12 +8,12 @@
     <nav class="nav" :class='{is_open : open}'>
       <p class="nav__title">- Categorys</p>
       <ul class="nav__body">
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/htmlcss">HTML / CSS</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/javascript">JavaScript</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/wordpress">WordPress</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/shopify">Shopify</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/etc">その他</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/javascript">JavaScript</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/wordpress">WordPress</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/shopify">Shopify</nuxt-link></li>
+        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/etc">その他</nuxt-link></li>
       </ul>
       <p class="nav__title">- Pages</p>
       <ul class="nav__body">
