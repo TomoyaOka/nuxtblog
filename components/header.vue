@@ -2,15 +2,9 @@
     <header class="header">
       <div class="header__inner">
       <h1 class="header__title"><nuxt-link to="/">Next</nuxt-link></h1>
-      <!-- mode -->
-      <!-- <div class="color-switch">
-        <button @click="$colorMode.preference = 'light'" class="light"></button>
-        <button @click="$colorMode.preference = 'dark'" class="dark"></button>
-        <button @click="$colorMode.preference = 'sepia'" class="sepia"></button>
-      </div> -->
-      <!--  -->
       <Menu />
       </div>
+      <Timer />
     </header>
 </template>
 
