@@ -1,6 +1,6 @@
 <template>
   <div class="timer">
-    <p class="timer__number">Current Time : {{ time }}</p>
+    <p class="timer__number">{{ time }}</p>
   </div>
 </template>
 
@@ -37,7 +37,8 @@ $sp: 768px;
   left: 14rem;
   @include sp {
     top: 2.1rem;
-    left: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
