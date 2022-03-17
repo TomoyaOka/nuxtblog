@@ -15,7 +15,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0' },
       { hid: 'description', name: 'description', content: 'HTML.CSS.Nuxt.Vueなど技術面についての記事や筆者の考え方について投稿していくブログです。' },
       { hid: 'og:site_name', property: 'og:site_name', content: 'Next!!' },
       { hid: 'og:type', property: 'og:type', content: 'article' },
