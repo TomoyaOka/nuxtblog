@@ -1,6 +1,7 @@
 <template>
   <div class="cover">
     <LargeTitle name="サイトについて" />
+    <SearchBar />
     <div class="flex">
       <main class="main page">
         <div class="page-cover">

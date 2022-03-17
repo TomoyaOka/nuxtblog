@@ -1,6 +1,7 @@
 <template>
   <div class="cover">
     <LargeTitle name="HTML / CSS" />
+    <SearchBar />
     <div class="flex">
       <main class="main">
         <Card 

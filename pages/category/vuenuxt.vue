@@ -1,6 +1,7 @@
 <template>
   <div class="cover">
     <LargeTitle name="Vue.js / Nuxt.js" />
+    <SearchBar />
     <div class="flex">
       <main class="main">
         <Card :items="items" />

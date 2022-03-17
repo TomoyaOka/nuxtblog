@@ -1,6 +1,7 @@
 <template>
   <div class="cover">
     <LargeTitle name="ご意見・お問い合わせ" />
+    <SearchBar />
     <div class="flex">
       <main class="main page">
         <div class="page-cover">

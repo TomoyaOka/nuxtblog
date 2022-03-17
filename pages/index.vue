@@ -1,6 +1,7 @@
 <template>
   <div class="cover">
     <LargeTitle name="Next" />
+    <SearchBar />
     <div class="flex">
       <main class="main front-page">
         <Card :items="items" />
