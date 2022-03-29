@@ -21,20 +21,25 @@
           <h2 class="entry__title">{{ item.title }}</h2>
           <div class="entry__img">
             <span class="tag">{{ item.category.name }}</span>
-            <img :src='item.thumbnail.url' alt="">
+            <img :src="item.thumbnail.url" alt="" />
           </div>
 
           <div class="entry__toc">
-          <h4 class="entry__toc-title">目次</h4>
-          <ul class="entry__toc-lists">
-            <li v-for="item in toc" :key="item.id" :class="`list ${item.name}`">
-              <n-link v-scroll-to="`#${item.id}`" to>
-                {{ item.text }}
-              </n-link>
-            </li>
-          </ul>
+            <h4 class="entry__toc-title">目次</h4>
+            <ul class="entry__toc-lists">
+              <li
+                v-for="item in toc"
+                :key="item.id"
+                :class="`list ${item.name}`"
+              >
+                <nuxt-link v-scroll-to="`#${item.id}`" to>
+                  {{ item.text }}
+                </nuxt-link>
+              </li>
+            </ul>
           </div>
           <div class="entry__content" v-html="content"></div>
+          <Share :id="item.id" :title="item.title" />
         </article>
       </main>
       <Sidebar />
@@ -215,7 +220,7 @@ $sp: 768px;
         padding: 0.5rem 0;
       }
       span {
-        color: var(--sub-color)!important;
+        color: var(--sub-color) !important;
       }
     }
     h3 {
@@ -230,7 +235,7 @@ $sp: 768px;
         padding: 0 0.5rem;
       }
       span {
-        color: var(--sub-color)!important;
+        color: var(--sub-color) !important;
       }
     }
     p {
@@ -256,17 +261,17 @@ $sp: 768px;
       @include sp {
         padding: 0;
       }
-    code {
-      font-size: 1.4rem;
-      font-family: "fonts", sans-serif !important;
-      line-height: 1.6;
-      border-radius: 1.2rem;
-      padding: 3rem 2rem !important;
-      @include sp {
-        border-radius: 0.8rem;
-        padding: 2rem 1rem !important;
+      code {
+        font-size: 1.4rem;
+        font-family: "fonts", sans-serif !important;
+        line-height: 1.6;
+        border-radius: 1.2rem;
+        padding: 3rem 2rem !important;
+        @include sp {
+          border-radius: 0.8rem;
+          padding: 2rem 1rem !important;
+        }
       }
-    }
     }
 
     a {
@@ -290,7 +295,7 @@ $sp: 768px;
       padding-left: 1.4rem;
       position: relative;
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 50%;
         left: 0;
@@ -315,12 +320,11 @@ $sp: 768px;
       background-color: rgb(235, 235, 235) !important;
     }
 
-
     .embedly-embed {
       max-width: 100%;
       height: 40rem;
       @include sp {
-      height: 30rem;
+        height: 30rem;
       }
     }
   }
@@ -331,10 +335,10 @@ $sp: 768px;
     border-radius: 1.4rem;
     padding: 2rem;
     margin-bottom: 6rem;
-      @include sp {
-        border-radius: 1rem;
-        margin-bottom: 3rem;
-      }
+    @include sp {
+      border-radius: 1rem;
+      margin-bottom: 3rem;
+    }
     &-title {
       font-size: var(--xl);
       margin-bottom: 2rem;
@@ -352,13 +356,13 @@ $sp: 768px;
       a {
         display: block;
         width: fit-content;
-        border-bottom: none!important;
+        border-bottom: none !important;
         font-size: var(--sm);
-        color: #333!important;
+        color: #333 !important;
         padding-left: 2rem;
         position: relative;
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           top: 50%;
           left: 0.35rem;
