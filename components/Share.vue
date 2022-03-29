@@ -123,7 +123,7 @@ $sp: 768px;
     display: block;
     width: 24rem;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 1.4rem 0;
     transition: opacity 0.2s ease;
     @include sp {
       width: 11rem;
@@ -135,7 +135,7 @@ $sp: 768px;
   }
   .sns-twitter {
     img {
-      width: 4.12rem;
+      width: 3.12rem;
       @include sp {
         width: 2.4rem;
       }
@@ -147,7 +147,7 @@ $sp: 768px;
       margin: 0 1rem;
     }
     img {
-      width: 3.4rem;
+      width: 2.7rem;
       @include sp {
         width: 2rem;
       }
@@ -155,7 +155,7 @@ $sp: 768px;
   }
   .sns-hatena {
     img {
-      width: 3.4rem;
+      width: 2.7rem;
       @include sp {
         width: 2rem;
       }
