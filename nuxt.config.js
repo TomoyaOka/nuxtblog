@@ -89,12 +89,14 @@ export default {
       }
     ]
   ],
-  webfontloader: {
-    // google: {
-    //   families: ['Noto+Sans+JP:400,700']
-    // }
+  // webfontloader: {
+  //   google: {
+  //     families: ['Noto+Sans+JP:400,700']
+  //   }
+  // },
+  render: {
+    injectScripts: false
   },
-
   "google-gtag": {
     id: "G-5V3VF5LL3P",
     debug: true
