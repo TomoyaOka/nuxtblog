@@ -94,9 +94,9 @@ export default {
   //     families: ['Noto+Sans+JP:400,700']
   //   }
   // },
-  render: {
-    injectScripts: false
-  },
+  // render: {
+  //   injectScripts: false
+  // },
   "google-gtag": {
     id: "G-5V3VF5LL3P",
     debug: true
