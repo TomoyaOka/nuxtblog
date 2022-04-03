@@ -1,6 +1,6 @@
 <template>
   <div class="cover">
-    <LargeTitle name="" />
+    <LargeTitle name="Page" />
     <SearchBar />
     <div class="flex">
       <main class="main">
