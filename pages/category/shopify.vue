@@ -35,9 +35,9 @@ export default {
     const {
       data
     } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}${
-        categoryId === undefined ? "" : `&filters=category[equals]${categoryId}`
-      }&offset=${(page - 1) * limit}`,
+      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&filters=category[equals]${categoryId}&offset=${(page -
+        1) *
+        limit}`,
       { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
     );
     const categories = await axios.get(

@@ -5,8 +5,7 @@ const { API_KEY } = process.env;
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
-  // target: "static",
-  target: "server",
+  target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -141,41 +140,10 @@ export default {
         component: resolve(__dirname, "pages/index.vue"),
         name: "page"
       });
-      // HTMLCSSページルーティング
       routes.push({
-        path: "/category/:htmlcss/page/:p",
-        component: resolve(__dirname, "pages/category/htmlcss.vue"),
-        name: "htmlcss"
-      });
-      // VueNuxtページルーティング
-      routes.push({
-        path: "/category/:vuenuxt/page/:p",
-        component: resolve(__dirname, "pages/category/vuenuxt.vue"),
-        name: "vuenuxt"
-      });
-      // shopifyページルーティング
-      routes.push({
-        path: "/category/:shopify/page/:p",
-        component: resolve(__dirname, "pages/category/shopify.vue"),
-        name: "shopify"
-      });
-      // wordpressページルーティング
-      routes.push({
-        path: "/category/:wordpress/page/:p",
-        component: resolve(__dirname, "pages/category/wordpress.vue"),
-        name: "wordpress"
-      });
-      // etcページルーティング
-      routes.push({
-        path: "/category/:etc/page/:p",
-        component: resolve(__dirname, "pages/category/etc.vue"),
-        name: "etc"
-      });
-      // javascriptページルーティング
-      routes.push({
-        path: "/category/:javascript/page/:p",
-        component: resolve(__dirname, "pages/category/javascript.vue"),
-        name: "javascript"
+        path: "/category/:categoryId/page/:p",
+        component: resolve(__dirname, "pages/category/index.vue"),
+        name: "category"
       });
     }
   },
@@ -191,7 +159,7 @@ export default {
         [...Array(end - start + 1)].map((_, i) => start + i);
 
       const pages = await axios
-        .get(`https://nuxtblog.microcms.io/api/v1/media?limit=0`, {
+        .get(`https://nuxtblog.microcms.io/api/v1/media`, {
           headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
         })
         .then(res =>
@@ -213,7 +181,7 @@ export default {
         categories.map(category =>
           axios
             .get(
-              `https://nuxtblog.microcms.io/api/v1/media?limit=0&filters=category[equals]${category}`,
+              `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&filters=category[equals]${category}`,
               { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
             )
             .then(res =>

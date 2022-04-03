@@ -4,9 +4,7 @@
     <SearchBar />
     <div class="flex">
       <main class="main">
-        <Card 
-        :items="items" 
-        />
+        <Card :items="items" />
         <Pagenation
           :pager="pager"
           :current="Number(page)"
@@ -21,46 +19,48 @@
 
 <script>
 import axios from "axios";
-  export default {
-      data() {
+export default {
+  data() {
     return {
-      items: "",
+      items: ""
     };
   },
   head: {
-    script: [],
+    script: []
   },
-  async asyncData({params}) {
-    const page = params.p || '1'
-    const categoryId = 'htmlcss'
-    const limit = 12
-    const { data } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}${
-        categoryId === undefined ? '' : `&filters=category[equals]${categoryId}`
-      }&offset=${(page - 1) * limit}`,
-      { headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY } }
-    )
+  async asyncData({ params }) {
+    const page = params.p || "1";
+    const categoryId = "htmlcss";
+    const limit = 12;
+    const {
+      data
+    } = await axios.get(
+      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&filters=category[equals]${categoryId}&offset=${(page -
+        1) *
+        limit}`,
+      { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
+    );
     const categories = await axios.get(
       `https://nuxtblog.microcms.io/api/v1/media?limit=12&filters=category[equals]${categoryId}`,
       {
-        headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
+        headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
       }
     );
     const selectedCategory =
       categoryId !== undefined
-        ? categories.data.contents.find((content) => content.id === categoryId)
+        ? categories.data.contents.find(content => content.id === categoryId)
         : undefined;
     return {
       items: data.contents,
       selectedCategory,
       page,
-      pager: [...Array(Math.ceil(data.totalCount / limit)).keys()],
+      pager: [...Array(Math.ceil(data.totalCount / limit)).keys()]
     };
   },
   head() {
     return {
-      title: 'HTML / CSS - Next'
-    }
+      title: "HTML / CSS - Next"
+    };
   }
 };
 </script>
@@ -80,6 +80,4 @@ $sp: 768px;
     width: 100%;
   }
 }
-
-
 </style>
