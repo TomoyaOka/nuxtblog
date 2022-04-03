@@ -23,15 +23,12 @@ export default {
     title: "Next"
   },
   async asyncData({ params }) {
+    const url = "https://nuxtblog.microcms.io/api/v1/media";
     const page = params.p || "1";
     const limit = 12;
-    const {
-      data
-    } = await axios.get(
-      `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&offset=${(page -
-        1) *
-        limit}`,
-      { headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY } }
+    const { data } = await axios.get(
+      `${url}?limit=${limit}&offset=${(page - 1) * limit}`,
+      { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
     );
     return {
       items: data.contents

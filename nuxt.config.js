@@ -5,7 +5,8 @@ const { API_KEY } = process.env;
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
-  target: "static",
+  // target: "static",
+  target: "server",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -132,7 +133,6 @@ export default {
   env: {
     API_KEY
   },
-  performance: { hints: false },
 
   router: {
     extendRoutes(routes, resolve) {
@@ -187,22 +187,21 @@ export default {
   generate: {
     async routes() {
       const limit = 12;
-      const category = "htmlcss";
       const range = (start, end) =>
         [...Array(end - start + 1)].map((_, i) => start + i);
 
       const pages = await axios
-        .get(`https://nuxtblog.microcms.io/api/v1/media`, {
+        .get(`https://nuxtblog.microcms.io/api/v1/media?limit=0`, {
           headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
         })
         .then(res =>
-          range(1, Math.ceil(res.data.totalCount / 1000)).map(p => ({
+          range(1, Math.ceil(res.data.totalCount / limit)).map(p => ({
             route: `/page/${p}`
           }))
         );
 
       const categories = await axios
-        .get(`https://nuxtblog.microcms.io/api/v1/category`, {
+        .get(`https://nuxtblog.microcms.io/api/v1/category?fields=id`, {
           headers: { "X-MICROCMS-API-KEY": process.env.API_KEY }
         })
         .then(({ data }) => {
@@ -211,10 +210,10 @@ export default {
 
       // カテゴリーページのページング
       const categoryPages = await Promise.all(
-        categories.map(() =>
+        categories.map(category =>
           axios
             .get(
-              `https://nuxtblog.microcms.io/api/v1/media?limit=${limit}&filters=category[equals]${category}`,
+              `https://nuxtblog.microcms.io/api/v1/media?limit=0&filters=category[equals]${category}`,
               { headers: { "X-MICROCMS-API-KEY": process.env.API_KEY } }
             )
             .then(res =>
