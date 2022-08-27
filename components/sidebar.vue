@@ -7,29 +7,29 @@
           <li><nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link></li>
           <li><nuxt-link to="/category/wordpress">WordPress</nuxt-link></li>
           <li><nuxt-link to="/category/javascript">JavaScript</nuxt-link></li>
-          <li><nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
+          <li>
+            <nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link>
+          </li>
           <li><nuxt-link to="/category/shopify">Shopify</nuxt-link></li>
           <li><nuxt-link to="/category/etc">その他</nuxt-link></li>
         </ul>
       </div>
 
       <div class="sidebar__content">
-        <p class="sidebar__title">Links</p>
-        <ul class="sidebar__list">
-          <li><a href="https://note.com/toom_design" target="_blank" rel="noopener noreferrer">note</a></li>
-          <li><a href="https://twitter.com/Create_toom" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-          <li><a href="https://webcommunity.site/" target="_blank" rel="noopener noreferrer">WEB-COMMUNUTY</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar__content">
         <p class="sidebar__title">Changers</p>
         <ul class="sidebar__list">
-          <li><nuxt-link v-scroll-to="'#member01'" to="/about/#member01">Tomoya Okada</nuxt-link></li>
-          <li><nuxt-link v-scroll-to="'#member02'" to="/about/#member02">Kyan</nuxt-link></li>
+          <li>
+            <nuxt-link v-scroll-to="'#member01'" to="/about/#member01"
+              >Tomoya Okada</nuxt-link
+            >
+          </li>
+          <li>
+            <nuxt-link v-scroll-to="'#member02'" to="/about/#member02"
+              >Kyan</nuxt-link
+            >
+          </li>
         </ul>
       </div>
-
     </div>
   </aside>
 </template>
@@ -67,17 +67,17 @@ $sp: 768px;
     font-size: var(--md);
     margin-bottom: 1.6rem;
     padding-left: 2rem;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 1.6rem;
-        height: 1.6rem;
-        background-color: var(--base-color);
-      }
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 1.6rem;
+      height: 1.6rem;
+      background-color: var(--base-color);
+    }
   }
   &__list {
     li {

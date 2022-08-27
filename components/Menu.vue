@@ -1,26 +1,48 @@
 <template>
   <div>
-    <button class="menu-btn" :class='{is_open : open}' @click='openAction'>
-      <span class="line line _top" :class='{is_open : open}'></span>
-      <span class="line line _middle" :class='{is_open : open}'></span>
-      <span class="line line _bottom" :class='{is_open : open}'></span>
+    <button class="menu-btn" :class="{ is_open: open }" @click="openAction">
+      <span class="line line _top" :class="{ is_open: open }"></span>
+      <span class="line line _middle" :class="{ is_open: open }"></span>
+      <span class="line line _bottom" :class="{ is_open: open }"></span>
     </button>
-    <nav class="nav" :class='{is_open : open}'>
+    <nav class="nav" :class="{ is_open: open }">
       <p class="nav__title">- Categorys</p>
       <ul class="nav__body">
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/javascript">JavaScript</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/wordpress">WordPress</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/shopify">Shopify</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/category/etc">その他</nuxt-link></li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/javascript">JavaScript</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/wordpress">WordPress</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/shopify">Shopify</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/category/etc">その他</nuxt-link>
+        </li>
       </ul>
       <p class="nav__title">- Pages</p>
       <ul class="nav__body">
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/about">サイトについて</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link v-scroll-to="'#member'" to="/about/#member">メンバーリスト</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link v-scroll-to="'#works'" to="/about/#works">ご依頼について</nuxt-link></li>
-        <li class="nav__body-list" @click='openAction'><nuxt-link to="/contact">お問い合わせ</nuxt-link></li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/about">サイトについて</nuxt-link>
+        </li>
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link v-scroll-to="'#member'" to="/about/#member"
+            >メンバーリスト</nuxt-link
+          >
+        </li>
+        <!-- <li class="nav__body-list" @click="openAction">
+          <nuxt-link v-scroll-to="'#works'" to="/about/#works"
+            >ご依頼について</nuxt-link
+          >
+        </li> -->
+        <!-- <li class="nav__body-list" @click='openAction'><nuxt-link to="/contact">お問い合わせ</nuxt-link></li> -->
       </ul>
     </nav>
   </div>
@@ -30,13 +52,13 @@
 export default {
   data() {
     return {
-      open: false,
+      open: false
     };
   },
   methods: {
     //Menuクラス追加
     openAction() {
-      this.open = !this.open
+      this.open = !this.open;
     }
   }
 };
@@ -123,7 +145,7 @@ $sp: 768px;
     padding: 10vh 2rem;
   }
   &::-webkit-scrollbar {
-    display:none;
+    display: none;
   }
   &.is_open {
     display: block;
@@ -165,24 +187,22 @@ $sp: 768px;
       &:hover {
         opacity: 0.5;
       }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      width: 4rem;
-      height: 2rem;
-      background: url('@/assets/img/arrow-right.svg') center no-repeat;
-      background-size: 50%;
-      pointer-events: none;
-      @include sp {
-        background-size: 35%;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 4rem;
+        height: 2rem;
+        background: url("@/assets/img/arrow-right.svg") center no-repeat;
+        background-size: 50%;
+        pointer-events: none;
+        @include sp {
+          background-size: 35%;
+        }
       }
-    }
     }
   }
 }
-
-
 </style>

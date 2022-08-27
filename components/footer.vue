@@ -1,35 +1,34 @@
 <template>
-    <footer class="footer">
-      <div class="footer__inner">
-        <div class="footer__flex">
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__flex">
         <ul class="footer__list">
           <li>Details</li>
           <li><nuxt-link to="/about">サイトについて</nuxt-link></li>
-          <li><nuxt-link v-scroll-to="'#member'" to="/about/#member">メンバーリスト</nuxt-link></li>
+          <li>
+            <nuxt-link v-scroll-to="'#member'" to="/about/#member"
+              >メンバーリスト</nuxt-link
+            >
+          </li>
         </ul>
 
         <ul class="footer__list">
           <li>Works</li>
-          <li><nuxt-link v-scroll-to="'#works'" to="/about/#works">お仕事依頼について</nuxt-link></li>
         </ul>
 
         <ul class="footer__list">
           <li>ETC</li>
-          <!-- <li><nuxt-link to="/privacy">利用規約</nuxt-link></li> -->
-          <li><nuxt-link to="/contact">✉️ ご意見・お問い合わせ</nuxt-link></li>
         </ul>
-        </div>
       </div>
-      <p class="footer__copy">&copy;copyright 2021 Next</p>
-    </footer>
+    </div>
+    <p class="footer__copy">&copy;copyright 2021 Next</p>
+  </footer>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style lang="scss">
-$sp:768px;
+$sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
