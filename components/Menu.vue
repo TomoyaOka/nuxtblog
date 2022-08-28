@@ -37,11 +37,9 @@
             >メンバーリスト</nuxt-link
           >
         </li>
-        <!-- <li class="nav__body-list" @click="openAction">
-          <nuxt-link v-scroll-to="'#works'" to="/about/#works"
-            >ご依頼について</nuxt-link
-          >
-        </li> -->
+        <li class="nav__body-list" @click="openAction">
+          <nuxt-link to="/github">GithubCode</nuxt-link>
+        </li>
         <!-- <li class="nav__body-list" @click='openAction'><nuxt-link to="/contact">お問い合わせ</nuxt-link></li> -->
       </ul>
     </nav>

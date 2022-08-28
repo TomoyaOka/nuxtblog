@@ -8,16 +8,21 @@
 export default {
   data() {
     return {
-      time : ''
-    }
+      time: ""
+    };
   },
   mounted() {
-    let timerLoad = setInterval(this.updateTime, 1000); 
-  }, 
-  methods : {
+    let timerLoad = setInterval(this.updateTime, 1000);
+  },
+  methods: {
     updateTime() {
       let current_date = new Date();
-      this.time = current_date.getHours() + ':' + current_date.getMinutes() + ':' + current_date.getSeconds();
+      this.time =
+        current_date.getHours() +
+        ":" +
+        current_date.getMinutes() +
+        ":" +
+        current_date.getSeconds();
     }
   }
 };
@@ -36,10 +41,10 @@ $sp: 768px;
   top: 3rem;
   left: 14rem;
   @include sp {
-    top: 2.1rem;
+    font-size: 1.4rem;
+    top: 1.8rem;
     left: 50%;
     transform: translateX(-50%);
   }
 }
-
 </style>
