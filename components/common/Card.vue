@@ -8,10 +8,16 @@
         ></div>
         <h2 class="card__title">{{ item.title }}</h2>
         <div class="card__bottom">
-          <time class="card__day">{{
-            new Date(item.publishedAt).toLocaleDateString()
-          }}</time>
-          <p class="card__author">POST : {{ item.postName }}</p>
+          <div class="card__bottom-box">
+            <time class="card__day"
+              >update :
+              {{ new Date(item.publishedAt).toLocaleDateString() }}</time
+            >
+            <p class="card__author">post : {{ item.postName }}</p>
+          </div>
+          <div class="card__icon">
+            <img :src="`/${item.postName}.png`" alt="" />
+          </div>
         </div>
       </nuxt-link>
     </article>
@@ -101,16 +107,42 @@ $sp: 768px;
 
   &__bottom {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 1.6rem 0 1rem 0;
+    padding: 1.6rem 0;
   }
   &__day {
+    display: block;
     font-size: calc(var(--sm) - 0.2rem);
     color: rgb(150, 150, 150);
-    padding-right: 1rem;
+    margin-bottom: 0.4rem;
+    @include sp {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
   }
   &__author {
     font-size: calc(var(--sm) - 0.2rem);
+    @include sp {
+      font-size: 1.3rem;
+    }
+  }
+  &__icon {
+    width: 4.6rem;
+    height: 4.6rem;
+    background-color: #fff;
+    box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    overflow: hidden;
+    @include sp {
+      width: 6rem;
+      height: 6rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 </style>

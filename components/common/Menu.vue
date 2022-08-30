@@ -9,22 +9,22 @@
       <p class="nav__title">- Categorys</p>
       <ul class="nav__body">
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link>
+          <nuxt-link to="/category/htmlcss/page/1">HTML / CSS</nuxt-link>
         </li>
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/javascript">JavaScript</nuxt-link>
+          <nuxt-link to="/category/javascript/page/1">JavaScript</nuxt-link>
         </li>
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link>
+          <nuxt-link to="/category/vuenuxt/page/1">Vue.js / Nuxt.js</nuxt-link>
         </li>
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/wordpress">WordPress</nuxt-link>
+          <nuxt-link to="/category/wordpress/page/1">WordPress</nuxt-link>
         </li>
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/shopify">Shopify</nuxt-link>
+          <nuxt-link to="/category/shopify/page/1">Shopify</nuxt-link>
         </li>
         <li class="nav__body-list" @click="openAction">
-          <nuxt-link to="/category/etc">その他</nuxt-link>
+          <nuxt-link to="/category/etc/page/1">その他</nuxt-link>
         </li>
       </ul>
       <p class="nav__title">- Pages</p>

@@ -7,6 +7,15 @@
           <p class="entry__breadcrumb">
             <nuxt-link to="/">トップ</nuxt-link> ― {{ item.title }}
           </p>
+
+          <div class="post">
+            <p>投稿者 : {{ item.postName }}</p>
+
+            <div class="post-icon">
+              <img :src="`/${item.postName}.png`" alt="" />
+            </div>
+          </div>
+
           <p class="day">
             公開日：<time>{{
               new Date(item.publishedAt).toLocaleDateString()
@@ -137,6 +146,13 @@ $sp: 768px;
   }
 }
 
+._sp {
+  display: none;
+  @include sp {
+    display: block;
+  }
+}
+
 .details {
   @include sp {
     padding: 0;
@@ -189,6 +205,41 @@ $sp: 768px;
       @include sp {
         font-size: 1.3rem;
       }
+    }
+  }
+  .post {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px #d3d3d3 solid;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    @include sp {
+      justify-content: space-between;
+    }
+    p {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      @include sp {
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+    }
+  }
+  .post-icon {
+    width: 7rem;
+    height: 7rem;
+    background-color: #fff;
+    box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 100%;
+    overflow: hidden;
+    @include sp {
+      width: 8rem;
+      height: 8rem;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
   time {
@@ -364,11 +415,12 @@ $sp: 768px;
         &::after {
           content: "";
           position: absolute;
-          top: 50%;
+          top: 45%;
           left: 0.35rem;
           transform: translateY(-50%);
           width: 0.5rem;
           height: 0.5rem;
+          border-radius: 100%;
           background-color: var(--sub-color);
         }
       }
