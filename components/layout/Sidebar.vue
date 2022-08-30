@@ -4,14 +4,22 @@
       <div class="sidebar__content">
         <p class="sidebar__title">Categorys</p>
         <ul class="sidebar__list">
-          <li><nuxt-link to="/category/htmlcss">HTML / CSS</nuxt-link></li>
-          <li><nuxt-link to="/category/wordpress">WordPress</nuxt-link></li>
-          <li><nuxt-link to="/category/javascript">JavaScript</nuxt-link></li>
           <li>
-            <nuxt-link to="/category/vuenuxt">Vue.js / Nuxt.js</nuxt-link>
+            <nuxt-link to="/category/htmlcss/page/1">HTML / CSS</nuxt-link>
           </li>
-          <li><nuxt-link to="/category/shopify">Shopify</nuxt-link></li>
-          <li><nuxt-link to="/category/etc">その他</nuxt-link></li>
+          <li>
+            <nuxt-link to="/category/wordpress/page/1">WordPress</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/category/javascript/page/1">JavaScript</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/category/vuenuxt/page/1"
+              >Vue.js / Nuxt.js</nuxt-link
+            >
+          </li>
+          <li><nuxt-link to="/category/shopify/page/1">Shopify</nuxt-link></li>
+          <li><nuxt-link to="/category/etc/page/1">その他</nuxt-link></li>
         </ul>
       </div>
 

@@ -55,19 +55,18 @@ export default {
       required: true
     },
     category: {
-      type: Object,
+      type: String,
       required: false,
       default: undefined
-    },
-    categoryName: {
-      type: String
     }
   },
   methods: {
     getPath(p) {
-      return `/${
-        this.category !== undefined ? `category/${this.category.id}/` : ""
-      }category/${this.categoryName}/page/${p}`;
+      if (this.category !== undefined) {
+        return `/category/${this.category}/page/${p}`;
+      } else {
+        return `/page/${p}`;
+      }
     }
   }
 };
