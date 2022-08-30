@@ -131,7 +131,7 @@ $sp: 768px;
     width: 4.6rem;
     height: 4.6rem;
     background-color: #fff;
-    box-shadow: 0.2rem 0.4rem 0.5rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3.5rem rgba(0, 0, 0, 0.1);
     border-radius: 100%;
     overflow: hidden;
     @include sp {
