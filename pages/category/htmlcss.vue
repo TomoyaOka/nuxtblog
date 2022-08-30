@@ -1,18 +1,18 @@
 <template>
   <div class="cover">
-    <LargeTitle name="HTML / CSS" />
-    <SearchBar />
+    <CommonLargeTitle name="HTML / CSS" />
+    <CommonSearchBar />
     <div class="flex">
       <main class="main">
-        <Card :items="items" />
-        <Pagenation
+        <CommonCard :items="items" />
+        <CommonPagenation
           :pager="pager"
           :current="Number(page)"
           :category="selectedCategory"
           categoryName="htmlcss"
         />
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

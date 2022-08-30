@@ -1,13 +1,13 @@
 <template>
   <div class="wrap">
-    <Header />
+    <LayoutHeader />
     <Nuxt />
-    <Footer />
+    <LayoutFooter />
   </div>
 </template>
 
 <style lang="scss">
-$sp:768px;
+$sp: 768px;
 @mixin sp {
   @media (max-width: ($sp)) {
     @content;
@@ -24,12 +24,11 @@ $sp:768px;
 .main {
   width: 75%;
   padding: 0 2rem;
-  @media (min-width:1400px) {
+  @media (min-width: 1400px) {
     width: 70%;
   }
   @include sp {
     width: 100%;
   }
 }
-
 </style>

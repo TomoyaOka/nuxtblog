@@ -2,9 +2,9 @@
   <header class="header">
     <div class="header__inner">
       <h1 class="header__title"><nuxt-link to="/">Next</nuxt-link></h1>
-      <Menu />
+      <CommonMenu />
     </div>
-    <Timer />
+    <CommonTimer />
   </header>
 </template>
 

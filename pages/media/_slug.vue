@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <LargeTitle :name="item.title" />
+    <CommonLargeTitle :name="item.title" />
     <div class="flex">
       <main class="main details">
         <article class="entry">
@@ -39,10 +39,10 @@
             </ul>
           </div>
           <div class="entry__content" v-html="content"></div>
-          <Share :id="item.id" :title="item.title" />
+          <CommonShare :id="item.id" :title="item.title" />
         </article>
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

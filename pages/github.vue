@@ -1,6 +1,6 @@
 <template>
   <div class="cover">
-    <LargeTitle name="GithubCodePlace" />
+    <CommonLargeTitle name="GithubCodePlace" />
     <div class="flex">
       <main class="main">
         <p class="read-text">
@@ -12,7 +12,7 @@
           <div id="script"></div>
         </article>
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

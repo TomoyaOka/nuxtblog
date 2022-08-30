@@ -1,7 +1,7 @@
 <template>
   <div class="cover">
-    <LargeTitle name="サイトについて" />
-    <SearchBar />
+    <CommonLargeTitle name="サイトについて" />
+    <CommonSearchBar />
     <div class="flex">
       <main class="main page">
         <div class="page-cover">
@@ -50,7 +50,7 @@
           </section>
         </div>
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

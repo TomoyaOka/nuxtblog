@@ -1,12 +1,12 @@
 <template>
   <div class="cover">
-    <LargeTitle name="Next" />
-    <SearchBar />
+    <CommonLargeTitle name="Next" />
+    <CommonSearchBar />
     <div class="flex">
       <main class="main front-page">
-        <Card :items="items" />
+        <CommonCard :items="items" />
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

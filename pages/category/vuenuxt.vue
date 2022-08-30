@@ -1,18 +1,18 @@
 <template>
   <div class="cover">
-    <LargeTitle name="Vue.js / Nuxt.js" />
-    <SearchBar />
+    <CommonLargeTitle name="Vue.js / Nuxt.js" />
+    <CommonSearchBar />
     <div class="flex">
       <main class="main">
-        <Card :items="items" />
-        <Pagenation
+        <CommonCard :items="items" />
+        <CommonPagenation
           :pager="pager"
           :current="Number(page)"
           :category="selectedCategory"
           categoryName="vuenuxt"
         />
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>

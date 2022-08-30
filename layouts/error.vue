@@ -1,22 +1,26 @@
 <template>
   <div class="cover">
-    <LargeTitle name="404 - ページが見つかりません" />
+    <CommonLargeTitle name="404 - ページが見つかりません" />
     <div class="flex">
       <main class="main">
-        <h1 class="error" v-if="error.statusCode === 404"><span>404</span><br>お探しのページは見つかりませんでした。</h1>
-        <h1 class="error" v-else><span>404</span><br>お探しのページは見つかりませんでした。</h1>
+        <h1 class="error" v-if="error.statusCode === 404">
+          <span>404</span><br />お探しのページは見つかりませんでした。
+        </h1>
+        <h1 class="error" v-else>
+          <span>404</span><br />お探しのページは見つかりませんでした。
+        </h1>
         <NuxtLink class="error-top" to="/">トップページへ戻る</NuxtLink>
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    props: ['error'],
-    layout: 'error'
-  }
+export default {
+  props: ["error"],
+  layout: "error"
+};
 </script>
 
 <style lang="scss">
@@ -33,9 +37,9 @@ $sp: 768px;
   text-align: center;
   line-height: 1.7;
   margin: 100px 0 50px 0;
-    @include sp {
-      font-size: 1.6em;
-    }
+  @include sp {
+    font-size: 1.6em;
+  }
   span {
     font-size: 5rem;
     @include sp {
@@ -49,13 +53,13 @@ $sp: 768px;
     text-align: center;
     border-bottom: 1px #333 solid;
     margin: 0 auto;
-    transition: .2s;
+    transition: 0.2s;
     @include sp {
       font-size: 1.4rem;
     }
     &:hover {
-      transition: .2s;
-      opacity: .5;
+      transition: 0.2s;
+      opacity: 0.5;
     }
   }
 }

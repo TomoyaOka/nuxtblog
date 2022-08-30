@@ -1,14 +1,18 @@
 <template>
   <div class="cover">
-    <LargeTitle name="ご意見・お問い合わせ" />
-    <SearchBar />
+    <CommonLargeTitle name="ご意見・お問い合わせ" />
+    <CommonSearchBar />
     <div class="flex">
       <main class="main page">
         <div class="page-cover">
           <section class="contact">
             <form class="form">
               <dl class="form__item">
-                <dd class="form__name"><label for="name">お名前<span class="mark _gray">任意</span></label></dd>
+                <dd class="form__name">
+                  <label for="name"
+                    >お名前<span class="mark _gray">任意</span></label
+                  >
+                </dd>
                 <dt class="form__input">
                   <input
                     id="name"
@@ -19,7 +23,11 @@
                 </dt>
               </dl>
               <dl class="form__item">
-                <dd class="form__name"><label for="subject">件名<span class="mark _gray">任意</span></label></dd>
+                <dd class="form__name">
+                  <label for="subject"
+                    >件名<span class="mark _gray">任意</span></label
+                  >
+                </dd>
                 <dt class="form__input">
                   <input
                     id="subject"
@@ -31,7 +39,9 @@
               </dl>
               <dl class="form__item">
                 <dd class="form__name">
-                  <label for="content">お問い合わせ内容<span class="mark _red">必須</span></label>
+                  <label for="content"
+                    >お問い合わせ内容<span class="mark _red">必須</span></label
+                  >
                 </dd>
                 <dt class="form__input">
                   <textarea
@@ -41,12 +51,19 @@
                   />
                 </dt>
               </dl>
-              <button :disabled="isButton" id="submit" type="submit" @click="handleSubmit">送信する</button>
+              <button
+                :disabled="isButton"
+                id="submit"
+                type="submit"
+                @click="handleSubmit"
+              >
+                送信する
+              </button>
             </form>
           </section>
         </div>
       </main>
-      <Sidebar />
+      <LayoutSidebar />
     </div>
   </div>
 </template>
@@ -83,7 +100,7 @@ export default {
           }
         }
       );
-    },
+    }
   },
   computed: {
     isButton() {
@@ -93,7 +110,7 @@ export default {
         return true;
       }
     }
-  },
+  }
 };
 </script>
 
@@ -156,10 +173,10 @@ $sp: 768px;
       top: -0.1rem;
 
       &._red {
-      background-color: rgb(218, 31, 31);
+        background-color: rgb(218, 31, 31);
       }
       &._gray {
-      background-color: rgb(70, 70, 70);
+        background-color: rgb(70, 70, 70);
       }
     }
   }
@@ -190,7 +207,7 @@ $sp: 768px;
     display: block;
     width: 40rem;
     max-width: 100%;
-    background-color: rgb(44, 44, 44)!important;
+    background-color: rgb(44, 44, 44) !important;
     font-size: var(--sm);
     color: var(--white-color);
     text-align: center;
@@ -201,11 +218,11 @@ $sp: 768px;
       background-color: #000;
     }
   }
-    button[disabled] {
-    background-color: rgb(194, 194, 194)!important;
+  button[disabled] {
+    background-color: rgb(194, 194, 194) !important;
     &:hover {
-    cursor: no-drop;
-    background-color: rgb(194, 194, 194)!important;
+      cursor: no-drop;
+      background-color: rgb(194, 194, 194) !important;
     }
   }
 }
