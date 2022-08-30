@@ -3,7 +3,7 @@
     <ul class="pagenation__pager">
       <li v-if="current > 1" class="arrow">
         <nuxt-link :to="getPath(current - 1)">
-          ＜
+          <
         </nuxt-link>
       </li>
       <li v-if="3 < current" class="page">
@@ -35,7 +35,7 @@
       </li>
       <li v-if="current < pager.length" class="arrow">
         <nuxt-link :to="getPath(current + 1)">
-          ＞
+          >
         </nuxt-link>
       </li>
     </ul>
@@ -96,14 +96,12 @@ $sp: 768px;
 
     .page {
       a {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 3.7rem;
+        height: 3.7rem;
         text-align: center;
-        padding: 1rem 0;
-        @include sp {
-          width: 3.6rem;
-          padding: 0.8rem 0;
-        }
       }
     }
     .active {
