@@ -14,6 +14,9 @@
             <nuxt-link to="/category/javascript/page/1">JavaScript</nuxt-link>
           </li>
           <li>
+            <nuxt-link to="/category/typescript/page/1">TypeScript</nuxt-link>
+          </li>
+          <li>
             <nuxt-link to="/category/vuenuxt/page/1"
               >Vue.js / Nuxt.js</nuxt-link
             >
