@@ -1,7 +1,9 @@
 import axios from "axios";
 require("dotenv").config();
 const { API_KEY } = process.env;
-
+// const domain = process.env.BASE_URL.match(
+//   /^https?:\/{2,}(.*?)(?:\/|\?|#|$)/
+// )[1];
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
@@ -49,7 +51,13 @@ export default {
       { hid: "twitter:image", property: "twitter:image", content: "" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    script: [{ src: "/main.js" }]
+    script: [
+      { src: "/main.js" },
+      {
+        src:
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1476685182046923"
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -88,15 +96,15 @@ export default {
         id: "G-5V3VF5LL3P"
       }
     ]
+    // "@nuxtjs/google-adsense",
+    // {
+    //   id: "ca-pub-1476685182046923",
+    //   pageLevelAds: true
+    //   // analyticsUacct: "UA-XXX-X",
+    //   // analyticsDomainName: "example.com"
+    // }
   ],
-  // webfontloader: {
-  //   google: {
-  //     families: ['Noto+Sans+JP:400,700']
-  //   }
-  // },
-  // render: {
-  //   injectScripts: false
-  // },
+
   "google-gtag": {
     id: "G-5V3VF5LL3P",
     debug: true
