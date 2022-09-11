@@ -55,7 +55,7 @@ export default {
       { src: "/main.js" },
       {
         src:
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3468164663534942"
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1476685182046923"
       }
     ]
   },
