@@ -96,13 +96,11 @@ export default {
         id: "G-5V3VF5LL3P"
       }
     ]
-    // "@nuxtjs/google-adsense",
-    // {
-    //   id: "ca-pub-1476685182046923",
-    //   pageLevelAds: true
-    //   // analyticsUacct: "UA-XXX-X",
-    //   // analyticsDomainName: "example.com"
-    // }
+    "@nuxtjs/google-adsense",
+    {
+      id: "ca-pub-9850362357187814",
+      pageLevelAds: true
+    }
   ],
 
   "google-gtag": {
