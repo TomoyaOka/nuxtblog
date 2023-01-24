@@ -89,18 +89,17 @@ export default {
     "@nuxtjs/markdownit",
     "@nuxtjs/google-gtag",
     "nuxt-webfontloader",
-    // ['vue-scrollto/nuxt', { duration: 300 }],
-    [
-      "@nuxtjs/google-analytics",
-      {
-        id: "G-5V3VF5LL3P"
-      }
-    ]
     "@nuxtjs/google-adsense",
     {
       id: "ca-pub-9850362357187814",
       pageLevelAds: true
-    }
+    }[
+      // ['vue-scrollto/nuxt', { duration: 300 }],
+      ("@nuxtjs/google-analytics",
+      {
+        id: "G-5V3VF5LL3P"
+      })
+    ]
   ],
 
   "google-gtag": {
