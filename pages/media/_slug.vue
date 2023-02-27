@@ -289,22 +289,6 @@ $sp: 768px;
         color: var(--sub-color) !important;
       }
     }
-    h4 {
-      position: relative;
-      padding-left: 1.8rem;
-      display: inline-block;
-      font-size: var(--sm);
-      &::before {
-        content: "";
-        position: absolute;
-        width: 1.2rem;
-        height: 1.2rem;
-        background-color: var(--sub-color);
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-      }
-    }
     p {
       font-size: var(--sm);
       line-height: 1.6;

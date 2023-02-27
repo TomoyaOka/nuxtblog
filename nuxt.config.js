@@ -55,7 +55,7 @@ export default {
       { src: "/main.js" },
       {
         src:
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1476685182046923"
+          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3468164663534942"
       }
     ]
   },
@@ -89,17 +89,20 @@ export default {
     "@nuxtjs/markdownit",
     "@nuxtjs/google-gtag",
     "nuxt-webfontloader",
-    "@nuxtjs/google-adsense",
-    {
-      id: "ca-pub-9850362357187814",
-      pageLevelAds: true
-    }[
-      // ['vue-scrollto/nuxt', { duration: 300 }],
-      ("@nuxtjs/google-analytics",
+    // ['vue-scrollto/nuxt', { duration: 300 }],
+    [
+      "@nuxtjs/google-analytics",
       {
         id: "G-5V3VF5LL3P"
-      })
+      }
     ]
+    // "@nuxtjs/google-adsense",
+    // {
+    //   id: "ca-pub-1476685182046923",
+    //   pageLevelAds: true
+    //   // analyticsUacct: "UA-XXX-X",
+    //   // analyticsDomainName: "example.com"
+    // }
   ],
 
   "google-gtag": {
